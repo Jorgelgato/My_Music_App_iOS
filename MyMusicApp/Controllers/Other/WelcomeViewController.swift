@@ -10,13 +10,10 @@ import SwiftUI
 struct WelcomeViewController: View {
     var body: some View {
         NavigationView {
-            
             ZStack {
                 Color.green.edgesIgnoringSafeArea(.all)
-                VStack {
-                    Text("My Music App")
-                }
-                .navigationBarTitle("My Music App")
+                AuthViewController()
+                    .navigationBarTitle("My Music App")
             }
         }
     }
