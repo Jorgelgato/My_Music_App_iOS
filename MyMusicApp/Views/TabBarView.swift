@@ -1,5 +1,5 @@
 //
-//  TabBarViewController.swift
+//  ContentView.swift
 //  MyMusicApp
 //
 //  Created by Jorge Bobrek on 10/06/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TabBarViewController: View {
+struct TabBarView: View {
     var body: some View {
         TabView {
             HomeViewController()
@@ -23,5 +23,11 @@ struct TabBarViewController: View {
                     Label("Library", systemImage: "music.note.list")
                 }
         }
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        TabBarView()
     }
 }

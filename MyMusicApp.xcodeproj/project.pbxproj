@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		F7AF689E285A258700A2B338 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF689D285A258700A2B338 /* AuthResponse.swift */; };
+		F7B48ABA285BCF1000E8B147 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B48AB9285BCF1000E8B147 /* AuthViewModel.swift */; };
 		F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2292853C08300961852 /* MyMusicApp.swift */; };
-		F7B6B22C2853C08300961852 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B22B2853C08300961852 /* ContentView.swift */; };
+		F7B6B22C2853C08300961852 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B22B2853C08300961852 /* TabBarView.swift */; };
 		F7B6B22E2853C08700961852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B6B22D2853C08700961852 /* Assets.xcassets */; };
 		F7B6B2312853C08700961852 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7B6B2302853C08700961852 /* Preview Assets.xcassets */; };
-		F7B6B23E2853C1CA00961852 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B23D2853C1CA00961852 /* TabBarViewController.swift */; };
 		F7B6B2402853C1E800961852 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B23F2853C1E800961852 /* HomeViewController.swift */; };
 		F7B6B2422853C1F200961852 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2412853C1F200961852 /* SearchViewController.swift */; };
 		F7B6B2442853C1FE00961852 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2432853C1FE00961852 /* LibraryViewController.swift */; };
 		F7B6B2482853C22200961852 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2472853C22200961852 /* AuthViewController.swift */; };
-		F7B6B24A2853C22F00961852 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2492853C22F00961852 /* WelcomeViewController.swift */; };
+		F7B6B24A2853C22F00961852 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2492853C22F00961852 /* WelcomeView.swift */; };
 		F7B6B24C2853C23C00961852 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B24B2853C23C00961852 /* SettingsViewController.swift */; };
 		F7B6B24E2853C25400961852 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B24D2853C25400961852 /* ProfileViewController.swift */; };
 		F7B6B2502853C25F00961852 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B24F2853C25F00961852 /* PlayerViewController.swift */; };
@@ -34,17 +34,18 @@
 
 /* Begin PBXFileReference section */
 		F7AF689D285A258700A2B338 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthResponse.swift; path = MyMusicApp/AuthResponse.swift; sourceTree = SOURCE_ROOT; };
+		F7AF689F285A267000A2B338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F7B48AB9285BCF1000E8B147 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = MyMusicApp/Models/AuthViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F7B6B2262853C08300961852 /* MyMusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B6B2292853C08300961852 /* MyMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicApp.swift; sourceTree = "<group>"; };
-		F7B6B22B2853C08300961852 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F7B6B22B2853C08300961852 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		F7B6B22D2853C08700961852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7B6B2302853C08700961852 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F7B6B23D2853C1CA00961852 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F7B6B23F2853C1E800961852 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F7B6B2412853C1F200961852 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F7B6B2432853C1FE00961852 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		F7B6B2472853C22200961852 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		F7B6B2492853C22F00961852 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		F7B6B2492853C22F00961852 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		F7B6B24B2853C23C00961852 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F7B6B24D2853C25400961852 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F7B6B24F2853C25F00961852 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +90,7 @@
 		F7B6B2282853C08300961852 /* MyMusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				F7AF689F285A267000A2B338 /* Info.plist */,
 				F7B6B2292853C08300961852 /* MyMusicApp.swift */,
 				F7B6B23C2853C0BE00961852 /* Assets */,
 				F7B6B23B2853C0B900961852 /* Managers */,
@@ -121,7 +123,8 @@
 		F7B6B2382853C0A700961852 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F7B6B22B2853C08300961852 /* ContentView.swift */,
+				F7B6B22B2853C08300961852 /* TabBarView.swift */,
+				F7B6B2492853C22F00961852 /* WelcomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 		F7B6B23A2853C0B200961852 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F7B48AB9285BCF1000E8B147 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -166,7 +170,6 @@
 		F7B6B2452853C20300961852 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				F7B6B23D2853C1CA00961852 /* TabBarViewController.swift */,
 				F7B6B23F2853C1E800961852 /* HomeViewController.swift */,
 				F7B6B2412853C1F200961852 /* SearchViewController.swift */,
 				F7B6B2432853C1FE00961852 /* LibraryViewController.swift */,
@@ -178,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				F7B6B2472853C22200961852 /* AuthViewController.swift */,
-				F7B6B2492853C22F00961852 /* WelcomeViewController.swift */,
 				F7B6B24B2853C23C00961852 /* SettingsViewController.swift */,
 				F7B6B24D2853C25400961852 /* ProfileViewController.swift */,
 				F7B6B24F2853C25F00961852 /* PlayerViewController.swift */,
@@ -263,19 +265,19 @@
 				F7B6B2562853C29F00961852 /* AuthManager.swift in Sources */,
 				F7B6B2542853C28600961852 /* SearchResultsViewController.swift in Sources */,
 				F7AF689E285A258700A2B338 /* AuthResponse.swift in Sources */,
-				F7B6B24A2853C22F00961852 /* WelcomeViewController.swift in Sources */,
+				F7B6B24A2853C22F00961852 /* WelcomeView.swift in Sources */,
 				F7B6B25E2853C2DE00961852 /* Track.swift in Sources */,
 				F7B6B24E2853C25400961852 /* ProfileViewController.swift in Sources */,
-				F7B6B22C2853C08300961852 /* ContentView.swift in Sources */,
+				F7B6B22C2853C08300961852 /* TabBarView.swift in Sources */,
 				F7B6B2622853C2F400961852 /* User.swift in Sources */,
 				F7B6B25A2853C2BB00961852 /* HapticsManager.swift in Sources */,
-				F7B6B23E2853C1CA00961852 /* TabBarViewController.swift in Sources */,
 				F7B6B2482853C22200961852 /* AuthViewController.swift in Sources */,
 				F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */,
 				F7B6B2442853C1FE00961852 /* LibraryViewController.swift in Sources */,
 				F7B6B2602853C2ED00961852 /* Artist.swift in Sources */,
 				F7B6B2522853C26E00961852 /* PlaylistViewController.swift in Sources */,
 				F7B6B2402853C1E800961852 /* HomeViewController.swift in Sources */,
+				F7B48ABA285BCF1000E8B147 /* AuthViewModel.swift in Sources */,
 				F7B6B2502853C25F00961852 /* PlayerViewController.swift in Sources */,
 				F7B6B2582853C2AC00961852 /* APICaller.swift in Sources */,
 				F7B6B24C2853C23C00961852 /* SettingsViewController.swift in Sources */,
@@ -410,6 +412,7 @@
 				DEVELOPMENT_TEAM = 94Z8KLU8Z2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMusicApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,6 +442,7 @@
 				DEVELOPMENT_TEAM = 94Z8KLU8Z2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyMusicApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

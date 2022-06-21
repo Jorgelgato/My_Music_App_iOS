@@ -18,7 +18,7 @@ final class AuthManager {
     }
     
     private init() {
-        UserDefaults.standard.removeObject(forKey: "access_token")
+        self.isSignedIn = UserDefaults.standard.object(forKey: "signed") as? Bool ?? false
     }
     
     public var signInURL: URL? {
@@ -31,7 +31,9 @@ final class AuthManager {
     }
     
     var isSignedIn: Bool {
-        return accessToken != nil
+        didSet {
+            UserDefaults.standard.set(isSignedIn, forKey: "signed")
+        }
     }
     
     private var accessToken: String? {
@@ -106,5 +108,6 @@ final class AuthManager {
         UserDefaults.standard.setValue(result.access_token, forKey: "access_token")
         UserDefaults.standard.setValue(result.refresh_token, forKey: "refresh_token")
         UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expires_in)), forKey: "expiration_date")
+        self.isSignedIn = true
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WelcomeViewController: View {
+struct WelcomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,6 +21,6 @@ struct WelcomeViewController: View {
 
 struct WelcomeViewController_Previews: PreviewProvider {
     static var previews: some View {
-        WelcomeViewController()
+        WelcomeView()
     }
 }

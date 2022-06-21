@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct MyMusicApp: App {
+    @AppStorage("signed") private var isSignedIn: Bool = false
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if isSignedIn {
+                TabBarView()
+            } else {
+                WelcomeView()
+            }
         }
     }
 }
