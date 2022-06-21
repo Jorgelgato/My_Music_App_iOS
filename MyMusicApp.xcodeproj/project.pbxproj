@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F7AF689E285A258700A2B338 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AF689D285A258700A2B338 /* AuthResponse.swift */; };
+		F796F2E228620BE800B41AA9 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796F2E128620BE800B41AA9 /* AuthResponse.swift */; };
 		F7B48ABA285BCF1000E8B147 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B48AB9285BCF1000E8B147 /* AuthViewModel.swift */; };
 		F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2292853C08300961852 /* MyMusicApp.swift */; };
 		F7B6B22C2853C08300961852 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B22B2853C08300961852 /* TabBarView.swift */; };
@@ -33,7 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F7AF689D285A258700A2B338 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthResponse.swift; path = MyMusicApp/AuthResponse.swift; sourceTree = SOURCE_ROOT; };
+		F796F2E128620BE800B41AA9 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		F7AF689F285A267000A2B338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7B48AB9285BCF1000E8B147 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = MyMusicApp/Models/AuthViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F7B6B2262853C08300961852 /* MyMusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +132,7 @@
 		F7B6B2392853C0AC00961852 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F7AF689D285A258700A2B338 /* AuthResponse.swift */,
+				F796F2E128620BE800B41AA9 /* AuthResponse.swift */,
 				F7B6B25B2853C2D200961852 /* Playlist.swift */,
 				F7B6B25D2853C2DE00961852 /* Track.swift */,
 				F7B6B25F2853C2ED00961852 /* Artist.swift */,
@@ -264,10 +264,10 @@
 				F7B6B25C2853C2D200961852 /* Playlist.swift in Sources */,
 				F7B6B2562853C29F00961852 /* AuthManager.swift in Sources */,
 				F7B6B2542853C28600961852 /* SearchResultsViewController.swift in Sources */,
-				F7AF689E285A258700A2B338 /* AuthResponse.swift in Sources */,
 				F7B6B24A2853C22F00961852 /* WelcomeView.swift in Sources */,
 				F7B6B25E2853C2DE00961852 /* Track.swift in Sources */,
 				F7B6B24E2853C25400961852 /* ProfileViewController.swift in Sources */,
+				F796F2E228620BE800B41AA9 /* AuthResponse.swift in Sources */,
 				F7B6B22C2853C08300961852 /* TabBarView.swift in Sources */,
 				F7B6B2622853C2F400961852 /* User.swift in Sources */,
 				F7B6B25A2853C2BB00961852 /* HapticsManager.swift in Sources */,
