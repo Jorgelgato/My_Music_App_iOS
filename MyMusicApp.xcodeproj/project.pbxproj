@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F796F2E228620BE800B41AA9 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796F2E128620BE800B41AA9 /* AuthResponse.swift */; };
+		F796F2E4286287BE00B41AA9 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796F2E3286287BE00B41AA9 /* Widgets.swift */; };
 		F7B48ABA285BCF1000E8B147 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B48AB9285BCF1000E8B147 /* AuthViewModel.swift */; };
 		F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2292853C08300961852 /* MyMusicApp.swift */; };
 		F7B6B22C2853C08300961852 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B22B2853C08300961852 /* TabBarView.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		F796F2E128620BE800B41AA9 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		F796F2E3286287BE00B41AA9 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		F7AF689F285A267000A2B338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7B48AB9285BCF1000E8B147 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AuthViewModel.swift; path = MyMusicApp/Models/AuthViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F7B6B2262853C08300961852 /* MyMusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 			children = (
 				F7B6B22B2853C08300961852 /* TabBarView.swift */,
 				F7B6B2492853C22F00961852 /* WelcomeView.swift */,
+				F796F2E3286287BE00B41AA9 /* Widgets.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				F7B6B2562853C29F00961852 /* AuthManager.swift in Sources */,
 				F7B6B2542853C28600961852 /* SearchResultsViewController.swift in Sources */,
 				F7B6B24A2853C22F00961852 /* WelcomeView.swift in Sources */,
+				F796F2E4286287BE00B41AA9 /* Widgets.swift in Sources */,
 				F7B6B25E2853C2DE00961852 /* Track.swift in Sources */,
 				F7B6B24E2853C25400961852 /* ProfileViewController.swift in Sources */,
 				F796F2E228620BE800B41AA9 /* AuthResponse.swift in Sources */,

@@ -70,10 +70,8 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate {
         
         webView.isHidden = true
         
-        print("Code: \(code)")
         AuthManager.shared.exchangeCodeForToken(code: code) { success in
             DispatchQueue.main.async {
-                print("SOPLAAAAAAAR")
                 webView.inputViewController?.navigationController?.popToRootViewController(animated: true)
                 self.parent.shouldDismiss = true
             }
