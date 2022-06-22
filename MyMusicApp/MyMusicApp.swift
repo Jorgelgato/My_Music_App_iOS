@@ -12,9 +12,7 @@ struct MyMusicApp: App {
     @AppStorage("signed") private var isSignedIn: Bool = false
     
     init() {
-        AuthManager.shared.refreshIfNeeded { success in
-            print(success)
-        }
+        AuthManager.shared.refreshIfNeeded(completion: nil)
     }
     
     var body: some Scene {

@@ -12,7 +12,7 @@ struct SettingsViewController: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(spacing: 20) {
                 NavigationLink {
                     ProfileViewController()
                 } label: {

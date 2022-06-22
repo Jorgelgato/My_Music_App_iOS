@@ -17,21 +17,19 @@ struct ProfileImage: View {
     
     var body: some View{
         AsyncImage(url: URL(string: url)){ phase in
-            switch phase {
-            case .empty:
-                ProgressView()
-            case .success(let image):
+            if let image = phase.image {
                 image
                     .resizable()
-            case .failure:
+            } else if phase.error != nil {
                 Image("profile")
-                    .resizable()
-            @unknown default:
-                Image("profile")
-                    .resizable()
+                    .colorMultiply(.primary)
+                    .colorInvert()
+            } else {
+                ProgressView()
             }
         }
         .frame(width: 200, height: 200)
+        .background(.secondary)
         .clipShape(Circle())
     }
 }
