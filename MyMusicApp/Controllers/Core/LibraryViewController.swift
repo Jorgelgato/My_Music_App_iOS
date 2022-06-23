@@ -10,8 +10,8 @@ import SwiftUI
 struct LibraryViewController: View {
     var body: some View {
         NavigationView {
-            Text("LibraryViewController")
-                .navigationBarTitle("LibraryViewController")
+            Text("")
+                .navigationBarTitle("Library")
         }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileViewController: View {
-    @State private var user: User? = nil
+    @State private var user: UserModel? = nil
     @State private var error: Bool = false
     
     var body: some View {
@@ -22,16 +22,17 @@ struct ProfileViewController: View {
                 }
             } else {
                 VStack(spacing: 20) {
-                    ProfileImage(self.user!.images.count > 0 ? self.user!.images[0].url : "error")
+                    ProfileImage(self.user!.images?.count ?? 0 > 0 ? self.user!.images![0].url : "error")
                     
                     Text(self.user!.display_name)
                         .font(.title.bold())
                     
-                    Text(self.user!.product)
+                    Text(self.user!.product!)
                         .font(.title2)
                 }
             }
         }
+        .navigationBarTitle("Profile")
         .onAppear {
             loadUserData()
         }

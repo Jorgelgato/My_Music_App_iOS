@@ -26,7 +26,7 @@ struct SettingsViewController: View {
                     Text("Logout")
                 }
             }
-            .navigationBarTitle("SettingsViewController")
+            .navigationBarTitle("Settings")
         }
     }
 }

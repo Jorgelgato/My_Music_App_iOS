@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct User: Codable {
-    let country: String
+struct UserModel: Codable {
+    let country: String?
     let display_name: String
-    let explicit_content: [String: Bool]
-    let external_urls: [String: String]
-    //let followers: [String: Codable?]
+    let email: String?
+    let explicit_content: [String: Bool]?
+//    let external_urls: ExternalUrls
+    let followers: TotalsModel?
+    let href: String
     let id: String
-    let images: [UserImage]
-    let product: String
-}
-
-struct UserImage: Codable {
-    let url: String
+    let images: [ImageModel]?
+    let product: String?
+    let type: String
+    let uri: String
 }
