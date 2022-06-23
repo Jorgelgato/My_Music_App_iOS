@@ -33,3 +33,27 @@ struct ProfileImage: View {
         .clipShape(Circle())
     }
 }
+
+struct TrackImage: View {
+    var url: String
+    
+    init(_ url: String){
+        self.url = url
+    }
+    
+    var body: some View{
+        AsyncImage(url: URL(string: url)){ phase in
+            if let image = phase.image {
+                image
+                    .resizable()
+            } else if phase.error != nil {
+                Image(systemName: "exclamationmark.triangle")
+                    .colorMultiply(.primary)
+                    .colorInvert()
+            } else {
+                ProgressView()
+            }
+        }
+    }
+}
+

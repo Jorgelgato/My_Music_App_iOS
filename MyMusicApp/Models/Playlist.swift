@@ -21,7 +21,7 @@ struct PlaylistsResponse: Codable {
     let total: Int
 }
 
-struct PlaylistModel: Codable {
+struct PlaylistModel: Codable, Identifiable {
     let collaborative: Bool
     let description: String
     //let external_urls: ExternalUrls

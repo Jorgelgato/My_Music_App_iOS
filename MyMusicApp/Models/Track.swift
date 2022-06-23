@@ -12,7 +12,7 @@ struct RecommendationsResponse: Codable {
     let tracks: [TrackModel]
 }
 
-struct TrackModel: Codable {
+struct TrackModel: Codable, Identifiable {
     let album: AlbumModel
     let artists: [ArtistModel]
     let available_markets: [String]?
