@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		F796F2E228620BE800B41AA9 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796F2E128620BE800B41AA9 /* AuthResponse.swift */; };
 		F796F2E4286287BE00B41AA9 /* Widgets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F796F2E3286287BE00B41AA9 /* Widgets.swift */; };
+		F7B0227A2865EC8D00340215 /* NewReleasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B022792865EC8D00340215 /* NewReleasesView.swift */; };
+		F7B0227C2865ECC400340215 /* FeaturedPlaylistsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0227B2865ECC400340215 /* FeaturedPlaylistsView.swift */; };
+		F7B0227E2865ECF500340215 /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0227D2865ECF500340215 /* RecommendationsView.swift */; };
+		F7B022822865F4B800340215 /* HomeViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B022812865F4B800340215 /* HomeViewVM.swift */; };
 		F7B4817C2863AC1400B431AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B4817B2863AC1400B431AB /* LaunchScreen.storyboard */; };
 		F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2292853C08300961852 /* MyMusicApp.swift */; };
 		F7B6B22C2853C08300961852 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B22B2853C08300961852 /* TabBarView.swift */; };
@@ -41,6 +45,10 @@
 		F796F2E128620BE800B41AA9 /* AuthResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		F796F2E3286287BE00B41AA9 /* Widgets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Widgets.swift; sourceTree = "<group>"; };
 		F7AF689F285A267000A2B338 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F7B022792865EC8D00340215 /* NewReleasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesView.swift; sourceTree = "<group>"; };
+		F7B0227B2865ECC400340215 /* FeaturedPlaylistsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsView.swift; sourceTree = "<group>"; };
+		F7B0227D2865ECF500340215 /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
+		F7B022812865F4B800340215 /* HomeViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewVM.swift; path = MyMusicApp/Models/HomeViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F7B4817B2863AC1400B431AB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7B6B2262853C08300961852 /* MyMusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B6B2292853C08300961852 /* MyMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicApp.swift; sourceTree = "<group>"; };
@@ -81,6 +89,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7B022782865EC7100340215 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				F7B022792865EC8D00340215 /* NewReleasesView.swift */,
+				F7B0227B2865ECC400340215 /* FeaturedPlaylistsView.swift */,
+				F7B0227D2865ECF500340215 /* RecommendationsView.swift */,
+			);
+			path = Browse;
+			sourceTree = "<group>";
+		};
 		F7B6B21D2853C08300961852 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +151,7 @@
 		F7B6B2382853C0A700961852 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F7B022782865EC7100340215 /* Browse */,
 				F7B6B22B2853C08300961852 /* TabBarView.swift */,
 				F7B6B2492853C22F00961852 /* WelcomeView.swift */,
 				F796F2E3286287BE00B41AA9 /* Widgets.swift */,
@@ -160,6 +179,7 @@
 		F7B6B23A2853C0B200961852 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F7B022812865F4B800340215 /* HomeViewVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -277,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7C5A78F2864CFBE0027761C /* Genre.swift in Sources */,
+				F7B0227A2865EC8D00340215 /* NewReleasesView.swift in Sources */,
 				F7B6B2422853C1F200961852 /* SearchViewController.swift in Sources */,
 				F7B6B25C2853C2D200961852 /* Playlist.swift in Sources */,
 				F7B6B2562853C29F00961852 /* AuthManager.swift in Sources */,
@@ -291,12 +312,15 @@
 				F7B6B25A2853C2BB00961852 /* HapticsManager.swift in Sources */,
 				F7B6B2482853C22200961852 /* AuthViewController.swift in Sources */,
 				F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */,
+				F7B0227C2865ECC400340215 /* FeaturedPlaylistsView.swift in Sources */,
 				F7B6B2442853C1FE00961852 /* LibraryViewController.swift in Sources */,
 				F7B6B2602853C2ED00961852 /* Artist.swift in Sources */,
 				F7B6B2522853C26E00961852 /* PlaylistViewController.swift in Sources */,
 				F7B6B2402853C1E800961852 /* HomeViewController.swift in Sources */,
 				F7C5A78B2864ABA90027761C /* Image.swift in Sources */,
+				F7B022822865F4B800340215 /* HomeViewVM.swift in Sources */,
 				F7B6B2502853C25F00961852 /* PlayerViewController.swift in Sources */,
+				F7B0227E2865ECF500340215 /* RecommendationsView.swift in Sources */,
 				F7C5A78D2864ACA60027761C /* Album.swift in Sources */,
 				F7C5A7892864AB6F0027761C /* Totals.swift in Sources */,
 				F7B6B2582853C2AC00961852 /* APICaller.swift in Sources */,
