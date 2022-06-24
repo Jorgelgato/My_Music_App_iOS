@@ -21,10 +21,12 @@ struct Release: View {
                 .frame(width: 120, height: 120)
             VStack(alignment: .leading, spacing: 8) {
                 Text(album.name)
+                    .lineLimit(1)
                     .font(.title3.bold())
                     .foregroundColor(.primary)
                     .colorInvert()
                 Text(artistsString(artists: album.artists))
+                    .lineLimit(1)
                     .font(.title3)
                     .foregroundColor(.primary)
                     .colorInvert()
@@ -35,15 +37,5 @@ struct Release: View {
         .frame(width: 320, height: 120)
         .background(Color("AccentColor"))
         .padding(10)
-    }
-    
-    func artistsString(artists: [ArtistModel]) -> String {
-        var string = ""
-        for artist in artists {
-            string.append(artist.name + ", ")
-        }
-        string.removeLast()
-        string.removeLast()
-        return string
     }
 }

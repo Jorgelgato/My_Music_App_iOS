@@ -12,8 +12,18 @@ struct RecommendationsResponse: Codable {
     let tracks: [TrackModel]
 }
 
+struct TrackResponse: Codable {
+    let href: String
+    let items: [TrackModel]
+    let limit: Int
+    let next: String?
+    let offset: Int
+    let previous: String?
+    let total: Int
+}
+
 struct TrackModel: Codable, Identifiable {
-    let album: AlbumModel
+    let album: AlbumModel?
     let artists: [ArtistModel]
     let available_markets: [String]?
     let disk_number: Int?
@@ -26,7 +36,7 @@ struct TrackModel: Codable, Identifiable {
     let is_playable: Bool?
     let is_local: Bool
     let name: String
-    let popularity: Int
+    let popularity: Int?
 //    let preview_url: Any?
     let track_number: Int
     let type: String

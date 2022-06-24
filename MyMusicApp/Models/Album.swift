@@ -36,4 +36,5 @@ struct AlbumModel: Codable, Identifiable {
     let total_tracks: Int
     let type: String
     let uri: String
+    let tracks: TrackResponse?
 }

@@ -20,6 +20,7 @@ final class APICaller {
         case failedToGetData
     }
     
+    // MARK: Profile
     public func getCurrentUserProfile(completion: @escaping(Result<UserModel, Error>) -> Void) {
         createRequest(with: "/me", type: .GET) { baseRequest in
             let task = URLSession.shared.dataTask(with: baseRequest) { data, _, error in
@@ -38,7 +39,8 @@ final class APICaller {
             task.resume()
         }
     }
-    
+
+    // MARK: Browse
     public func getNewReleases(completion: @escaping(Result<NewReleasesResponse, Error>) -> Void) {
         createRequest(with: "/browse/new-releases", type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
@@ -107,6 +109,26 @@ final class APICaller {
                 
                 do {
                     let result = try JSONDecoder().decode(GenresSeedsResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    // MARK: Album
+    public func getAlbum(id: String, completion: @escaping(Result<AlbumModel, Error>) -> Void) {
+        createRequest(with: "/albums/\(id)", type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(AlbumModel.self, from: data)
                     completion(.success(result))
                 } catch {
                     completion(.failure(error))

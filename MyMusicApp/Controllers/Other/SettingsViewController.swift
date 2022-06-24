@@ -20,8 +20,8 @@ struct SettingsViewController: View {
                 }
                 
                 Button {
+                    showingSheet.toggle()
                     AuthManager.shared.isSignedIn = false
-                    self.showingSheet = false
                 } label: {
                     Text("Logout")
                 }
