@@ -24,7 +24,7 @@ func likesFormatter(likes: Int) -> String {
     return (formatter.string(from: NSNumber(value: likes)) ?? "0") + " likes"
 }
 
-func playlistDuration(items: [PlaylistItem]) -> String {
+func playlistDuration(items: [PlaylistItemModel]) -> String {
     var totalDuration = 0
     for item in items {
         totalDuration += item.track.duration_ms

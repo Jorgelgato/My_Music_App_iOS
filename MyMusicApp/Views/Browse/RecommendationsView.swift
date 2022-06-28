@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Track: View {
+struct TrackItem: View {
     let track: TrackModel
     
     init(_ track: TrackModel) {

@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Release: View {
+struct ReleaseItem: View {
     let album: AlbumModel
     
     init(_ album: AlbumModel) {

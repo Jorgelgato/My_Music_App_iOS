@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Playlist: View {
+struct PlaylistItem: View {
     let playlist: PlaylistsModel
     
     init(_ playlist: PlaylistsModel) {

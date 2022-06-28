@@ -8,10 +8,26 @@
 import SwiftUI
 
 struct SearchViewController: View {
+    @StateObject private var searchViewVM: SearchViewVM = SearchViewVM()
+    @State private var searchText = ""
+    private var twoColumnGrid = [GridItem(.fixed(200)), GridItem(.fixed(200))]
+    
     var body: some View {
         NavigationView {
-            Text("")
-                .navigationBarTitle("Search")
+            ScrollView {
+                LazyVGrid(columns: twoColumnGrid) {
+                    ForEach(searchViewVM.categories, id: \.self) { category in
+                        NavigationLink(destination: CategoryViewController(id: category.id)) {
+                            CateoryItem(category)
+                        }
+                    }
+                }
+            }
+            .padding()
+            .navigationBarTitle("Search")
+            .searchable(text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
+                        prompt: "Artists, songs, or podcasts")
         }
     }
 }

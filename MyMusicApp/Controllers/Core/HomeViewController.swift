@@ -28,7 +28,7 @@ struct HomeViewController: View {
                         LazyHGrid(rows: threeColumnGrid) {
                             ForEach (homeViewVM.albums, id: \.self) { album in
                                 NavigationLink(destination: AlbumViewController(id: album.id)) {
-                                    Release(album)
+                                    ReleaseItem(album)
                                 }
                             }
                         }
@@ -47,7 +47,7 @@ struct HomeViewController: View {
                         LazyHGrid(rows: twoColumnGrid) {
                             ForEach (homeViewVM.playlists, id: \.self) { playlist in
                                 NavigationLink(destination: PlaylistViewController(id: playlist.id)) {
-                                    Playlist(playlist)
+                                    PlaylistItem(playlist)
                                 }
                             }
                         }
@@ -63,7 +63,7 @@ struct HomeViewController: View {
                         .font(.title.bold())
                     LazyVStack {
                         ForEach (homeViewVM.recomendations, id: \.self) { track in
-                            Track(track)
+                            TrackItem(track)
                         }
                     }
                     .padding(.horizontal, 10)

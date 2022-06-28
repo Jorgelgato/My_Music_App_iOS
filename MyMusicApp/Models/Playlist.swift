@@ -51,14 +51,14 @@ struct PlaylistModel: Codable {
     //let primary_color: String?
     let `public`: Bool?
     let snapshot_id: String
-    let tracks: PlaylistTracks
+    let tracks: PlaylistTracksModel
     let type: String
     let uri: String
 }
 
-struct PlaylistTracks: Codable {
+struct PlaylistTracksModel: Codable {
     let href: String
-    let items: [PlaylistItem]
+    let items: [PlaylistItemModel]
     let limit: Int
     let next: String?
     let offset: Int
@@ -66,7 +66,7 @@ struct PlaylistTracks: Codable {
     let total: Int
 }
 
-struct PlaylistItem: Codable, Hashable {
+struct PlaylistItemModel: Codable, Hashable {
 //    let added_at: Date
     let added_by: UserModel
     let is_local: Bool
