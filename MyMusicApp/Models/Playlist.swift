@@ -13,7 +13,7 @@ struct FeaturedPlaylistsResponse: Codable {
 
 struct PlaylistsResponse: Codable {
     let href: String
-    let items: [PlaylistModel]
+    let items: [PlaylistsModel]
     let limit: Int
     let next: String?
     let offset: Int
@@ -21,7 +21,7 @@ struct PlaylistsResponse: Codable {
     let total: Int
 }
 
-struct PlaylistModel: Codable, Identifiable {
+struct PlaylistsModel: Codable, Hashable {
     let collaborative: Bool
     let description: String
     //let external_urls: ExternalUrls
@@ -30,10 +30,47 @@ struct PlaylistModel: Codable, Identifiable {
     let images: [ImageModel]
     let name: String
     let owner: UserModel
-    //let primary_color: Any?
+    //let primary_color: String?
     let `public`: Bool?
     let snapshot_id: String
-    let tracks: TotalsModel
+    let tracks: TrackResponse
     let type: String
     let uri: String
+}
+
+struct PlaylistModel: Codable {
+    let collaborative: Bool
+    let description: String
+//    let external_urls: ExternalUrls
+//    let followers: Any?
+    let href: String
+    let id: String
+    let images: [ImageModel]
+    let name: String
+    let owner: UserModel
+    //let primary_color: String?
+    let `public`: Bool?
+    let snapshot_id: String
+    let tracks: PlaylistTracks
+    let type: String
+    let uri: String
+}
+
+struct PlaylistTracks: Codable {
+    let href: String
+    let items: [PlaylistItem]
+    let limit: Int
+    let next: String?
+    let offset: Int
+    let previous: String?
+    let total: Int
+}
+
+struct PlaylistItem: Codable, Hashable {
+//    let added_at: Date
+    let added_by: UserModel
+    let is_local: Bool
+//    let primary_color: Any?
+    let track: TrackModel
+//    let video_thumbnail = Any?
 }

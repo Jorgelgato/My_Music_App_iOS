@@ -10,7 +10,7 @@ import Foundation
 class HomeViewVM: ObservableObject {
     
     @Published var albums: [AlbumModel] = []
-    @Published var playlists: [PlaylistModel] = []
+    @Published var playlists: [PlaylistsModel] = []
     @Published var recomendations: [TrackModel] = []
     
     init() {

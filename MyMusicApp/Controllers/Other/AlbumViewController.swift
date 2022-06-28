@@ -15,7 +15,7 @@ struct AlbumViewController: View {
         ScrollView {
             VStack {
                 if (albumViewVM.album != nil) {
-                    Album(albumViewVM.album!)
+                    AlbumView(albumViewVM.album!)
                 }
             }
         }

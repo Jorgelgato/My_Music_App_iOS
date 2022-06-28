@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct Album: View {
+struct AlbumView: View {
     let album: AlbumModel
     
     init(_ album: AlbumModel) {
@@ -19,8 +19,8 @@ struct Album: View {
         VStack {
             TrackImage(album.images[0].url)
                 .frame(width: 360, height: 360)
-            if album.tracks?.items.count ?? 0 > 0 {
-                ForEach(album.tracks!.items) { track in
+            if album.tracks?.items?.count ?? 0 > 0 {
+                ForEach(album.tracks!.items!, id: \.self)  { track in
                     TrackView(track)
                 }
             }

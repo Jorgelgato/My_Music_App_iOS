@@ -12,17 +12,17 @@ struct RecommendationsResponse: Codable {
     let tracks: [TrackModel]
 }
 
-struct TrackResponse: Codable {
+struct TrackResponse: Codable, Hashable {
     let href: String
-    let items: [TrackModel]
-    let limit: Int
+    let items: [TrackModel]?
+    let limit: Int?
     let next: String?
-    let offset: Int
+    let offset: Int?
     let previous: String?
     let total: Int
 }
 
-struct TrackModel: Codable, Identifiable {
+struct TrackModel: Codable, Hashable {
     let album: AlbumModel?
     let artists: [ArtistModel]
     let available_markets: [String]?
@@ -41,5 +41,4 @@ struct TrackModel: Codable, Identifiable {
     let track_number: Int
     let type: String
     let uri: String
-    
 }

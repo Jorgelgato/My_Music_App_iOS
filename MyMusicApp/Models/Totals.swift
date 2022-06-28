@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TotalsModel: Codable {
+struct TotalsModel: Codable, Hashable {
     let href: String?
     let total: Int?
 }

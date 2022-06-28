@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct PlaylistViewController: View {
+    var id: String
+    @StateObject private var playlistViewVM: PlaylistViewVM = PlaylistViewVM()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                if (playlistViewVM.playlist != nil) {
+                    PlaylistView(playlistViewVM.playlist!)
+                }
+            }
+        }
+        .navigationTitle(playlistViewVM.playlist?.name ?? "")
+        .onAppear {
+            playlistViewVM.getPlaylist(id: id)
+        }
     }
 }
 
 struct PlaylistViewController_Previews: PreviewProvider {
     static var previews: some View {
-        PlaylistViewController()
+        PlaylistViewController(id: "")
     }
 }

@@ -17,6 +17,8 @@
 		F7B0228728660EE500340215 /* AlbumViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228628660EE500340215 /* AlbumViewVM.swift */; };
 		F7B022892866189900340215 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B022882866189900340215 /* AlbumView.swift */; };
 		F7B0228B2866452E00340215 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228A2866452E00340215 /* TrackView.swift */; };
+		F7B0228D28664BA100340215 /* PlaylistViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228C28664BA100340215 /* PlaylistViewVM.swift */; };
+		F7B0228F28664BFF00340215 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228E28664BFF00340215 /* PlaylistView.swift */; };
 		F7B4817C2863AC1400B431AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B4817B2863AC1400B431AB /* LaunchScreen.storyboard */; };
 		F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2292853C08300961852 /* MyMusicApp.swift */; };
 		F7B6B22C2853C08300961852 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B22B2853C08300961852 /* TabBarView.swift */; };
@@ -57,6 +59,8 @@
 		F7B0228628660EE500340215 /* AlbumViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumViewVM.swift; path = MyMusicApp/Controllers/Other/AlbumViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F7B022882866189900340215 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		F7B0228A2866452E00340215 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
+		F7B0228C28664BA100340215 /* PlaylistViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistViewVM.swift; path = MyMusicApp/Views/PlaylistViewVM.swift; sourceTree = SOURCE_ROOT; };
+		F7B0228E28664BFF00340215 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 		F7B4817B2863AC1400B431AB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7B6B2262853C08300961852 /* MyMusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7B6B2292853C08300961852 /* MyMusicApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMusicApp.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 				F7B4817B2863AC1400B431AB /* LaunchScreen.storyboard */,
 				F7B022882866189900340215 /* AlbumView.swift */,
 				F7B0228A2866452E00340215 /* TrackView.swift */,
+				F7B0228E28664BFF00340215 /* PlaylistView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			children = (
 				F7B022812865F4B800340215 /* HomeViewVM.swift */,
 				F7B0228628660EE500340215 /* AlbumViewVM.swift */,
+				F7B0228C28664BA100340215 /* PlaylistViewVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				F7B6B2562853C29F00961852 /* AuthManager.swift in Sources */,
 				F7B0228728660EE500340215 /* AlbumViewVM.swift in Sources */,
 				F7B6B2542853C28600961852 /* SearchResultsViewController.swift in Sources */,
+				F7B0228D28664BA100340215 /* PlaylistViewVM.swift in Sources */,
 				F7B02285286603B700340215 /* AlbumViewController.swift in Sources */,
 				F7B6B24A2853C22F00961852 /* WelcomeView.swift in Sources */,
 				F796F2E4286287BE00B41AA9 /* Widgets.swift in Sources */,
@@ -336,6 +343,7 @@
 				F7C5A78B2864ABA90027761C /* Image.swift in Sources */,
 				F7B022822865F4B800340215 /* HomeViewVM.swift in Sources */,
 				F7B6B2502853C25F00961852 /* PlayerViewController.swift in Sources */,
+				F7B0228F28664BFF00340215 /* PlaylistView.swift in Sources */,
 				F7B0227E2865ECF500340215 /* RecommendationsView.swift in Sources */,
 				F7C5A78D2864ACA60027761C /* Album.swift in Sources */,
 				F7C5A7892864AB6F0027761C /* Totals.swift in Sources */,

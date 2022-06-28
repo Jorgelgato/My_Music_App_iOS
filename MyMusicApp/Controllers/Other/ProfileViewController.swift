@@ -24,7 +24,7 @@ struct ProfileViewController: View {
                 VStack(spacing: 20) {
                     ProfileImage(self.user!.images?.count ?? 0 > 0 ? self.user!.images![0].url : "error")
                     
-                    Text(self.user!.display_name)
+                    Text(self.user!.display_name!)
                         .font(.title.bold())
                     
                     Text(self.user!.product!)

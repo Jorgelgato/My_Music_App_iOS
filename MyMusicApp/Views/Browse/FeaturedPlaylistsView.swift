@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 struct Playlist: View {
-    let playlist: PlaylistModel
+    let playlist: PlaylistsModel
     
-    init(_ playlist: PlaylistModel) {
+    init(_ playlist: PlaylistsModel) {
         self.playlist = playlist
     }
     

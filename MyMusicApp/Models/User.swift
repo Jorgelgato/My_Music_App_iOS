@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct UserModel: Codable {
+struct UserModel: Codable, Hashable {
     let country: String?
-    let display_name: String
+    let display_name: String?
     let email: String?
     let explicit_content: [String: Bool]?
 //    let external_urls: ExternalUrls

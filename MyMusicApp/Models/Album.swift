@@ -21,7 +21,7 @@ struct AlbumResponse: Codable {
     let total: Int
 }
 
-struct AlbumModel: Codable, Identifiable {
+struct AlbumModel: Codable, Hashable {
     let album_type: String
     let artists: [ArtistModel]
     let available_markets: [String]

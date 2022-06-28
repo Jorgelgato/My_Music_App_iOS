@@ -26,8 +26,8 @@ struct HomeViewController: View {
                         .font(.title.bold())
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: threeColumnGrid) {
-                            ForEach (homeViewVM.albums) { album in
-                                NavigationLink(destination: AlbumViewController(id: album.id)){
+                            ForEach (homeViewVM.albums, id: \.self) { album in
+                                NavigationLink(destination: AlbumViewController(id: album.id)) {
                                     Release(album)
                                 }
                             }
@@ -45,8 +45,10 @@ struct HomeViewController: View {
                         .font(.title.bold())
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: twoColumnGrid) {
-                            ForEach (homeViewVM.playlists) { playlist in
-                                Playlist(playlist)
+                            ForEach (homeViewVM.playlists, id: \.self) { playlist in
+                                NavigationLink(destination: PlaylistViewController(id: playlist.id)) {
+                                    Playlist(playlist)
+                                }
                             }
                         }
                     }
@@ -61,7 +63,7 @@ struct HomeViewController: View {
                         .font(.title.bold())
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: threeColumnGrid) {
-                            ForEach (homeViewVM.recomendations) { track in
+                            ForEach (homeViewVM.recomendations, id: \.self) { track in
                                 Track(track)
                             }
                         }

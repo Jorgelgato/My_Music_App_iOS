@@ -138,6 +138,26 @@ final class APICaller {
         }
     }
     
+    // MARK: Playlist
+    public func getPlaylist(id: String, completion: @escaping(Result<PlaylistModel, Error>) -> Void) {
+        createRequest(with: "/playlists/\(id)", type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(PlaylistModel.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
     enum HTTPMethod: String {
         case GET
         case POST
