@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7125B93286BAFB200D2203B /* CategoryViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7125B92286BAFB200D2203B /* CategoryViewVM.swift */; };
 		F76A12E7286B8F5700391DD4 /* SearchViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */; };
 		F76A12E9286BA15B00391DD4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E8286BA15B00391DD4 /* Category.swift */; };
 		F76A12EB286BAB3F00391DD4 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12EA286BAB3F00391DD4 /* CategoryView.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7125B92286BAFB200D2203B /* CategoryViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewVM.swift; path = MyMusicApp/Controllers/Other/CategoryViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewVM.swift; path = MyMusicApp/Views/SearchViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E8286BA15B00391DD4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F76A12EA286BAB3F00391DD4 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				F7B0228628660EE500340215 /* AlbumViewVM.swift */,
 				F7B0228C28664BA100340215 /* PlaylistViewVM.swift */,
 				F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */,
+				F7125B92286BAFB200D2203B /* CategoryViewVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				F7B6B2602853C2ED00961852 /* Artist.swift in Sources */,
 				F76A12EB286BAB3F00391DD4 /* CategoryView.swift in Sources */,
 				F7B6B2522853C26E00961852 /* PlaylistViewController.swift in Sources */,
+				F7125B93286BAFB200D2203B /* CategoryViewVM.swift in Sources */,
 				F7B022892866189900340215 /* AlbumView.swift in Sources */,
 				F7B6B2402853C1E800961852 /* HomeViewController.swift in Sources */,
 				F7C5A78B2864ABA90027761C /* Image.swift in Sources */,

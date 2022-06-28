@@ -60,7 +60,7 @@ final class APICaller {
         }
     }
     
-    public func getFeaturedPlaylists(completion: @escaping(Result<FeaturedPlaylistsResponse, Error>) -> Void) {
+    public func getFeaturedPlaylists(completion: @escaping(Result<GeneralPlaylistsResponse, Error>) -> Void) {
         createRequest(with: "/browse/featured-playlists", type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
                 guard let data = data, error == nil else {
@@ -69,7 +69,7 @@ final class APICaller {
                 }
                 
                 do {
-                    let result = try JSONDecoder().decode(FeaturedPlaylistsResponse.self, from: data)
+                    let result = try JSONDecoder().decode(GeneralPlaylistsResponse.self, from: data)
                     completion(.success(result))
                 } catch {
                     completion(.failure(error))
@@ -178,8 +178,8 @@ final class APICaller {
         }
     }
     
-    public func getCategory(id: String, completion: @escaping(Result<CategoryModel, Error>) -> Void) {
-        createRequest(with: "/browse/categories/\(id)", type: .GET) { request in
+    public func getCategory(id: String, completion: @escaping(Result<GeneralPlaylistsResponse, Error>) -> Void) {
+        createRequest(with: "/browse/categories/\(id)/playlists", type: .GET) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
                 guard let data = data, error == nil else {
                     completion(.failure(APIError.failedToGetData))
@@ -187,7 +187,7 @@ final class APICaller {
                 }
                 
                 do {
-                    let result = try JSONDecoder().decode(CategoryModel.self, from: data)
+                    let result = try JSONDecoder().decode(GeneralPlaylistsResponse.self, from: data)
                     completion(.success(result))
                 } catch {
                     completion(.failure(error))

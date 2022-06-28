@@ -10,12 +10,11 @@ import SwiftUI
 struct SearchViewController: View {
     @StateObject private var searchViewVM: SearchViewVM = SearchViewVM()
     @State private var searchText = ""
-    private var twoColumnGrid = [GridItem(.fixed(200)), GridItem(.fixed(200))]
     
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: twoColumnGrid) {
+                LazyVGrid(columns: [GridItem(.fixed(200)), GridItem(.fixed(200))]) {
                     ForEach(searchViewVM.categories, id: \.self) { category in
                         NavigationLink(destination: CategoryViewController(id: category.id)) {
                             CateoryItem(category)
