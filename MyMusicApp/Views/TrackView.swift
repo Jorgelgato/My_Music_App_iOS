@@ -28,18 +28,9 @@ struct TrackView: View {
             }
             Spacer()
             Image(systemName: "heart")
-            Image(systemName: "slider.horizontal.3")
+            Image(systemName: "ellipsis")
+                .rotationEffect(.degrees(90))
         }
         .padding(8)
     }
-}
-
-func artistsString(artists: [ArtistModel]) -> String {
-    var string = ""
-    for artist in artists {
-        string.append(artist.name + ", ")
-    }
-    string.removeLast()
-    string.removeLast()
-    return string
 }

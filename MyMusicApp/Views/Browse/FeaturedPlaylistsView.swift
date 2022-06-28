@@ -17,7 +17,7 @@ struct Playlist: View {
     
     var body: some View {
         VStack(alignment: .leading ,spacing: 2) {
-            TrackImage(playlist.images[0].url)
+            TrackImage(playlist.images.count > 0 ? playlist.images[0].url : "error")
                 .frame(width: 240, height: 240)
             Text(playlist.name)
                 .bold()

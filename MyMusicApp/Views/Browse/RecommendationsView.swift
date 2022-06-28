@@ -18,7 +18,7 @@ struct Track: View {
     var body: some View {
         HStack {
             TrackImage(track.album!.images[0].url)
-                .frame(width: 120, height: 120)
+                .frame(width: 100, height: 100)
             VStack(alignment: .leading, spacing: 8) {
                 Text(track.name)
                     .font(.title3.bold())
@@ -32,18 +32,7 @@ struct Track: View {
             .padding(4)
             Spacer()
         }
-        .frame(width: 320, height: 120)
+        .frame(height: 100)
         .background(Color("AccentColor"))
-        .padding(10)
-    }
-    
-    func artistsString(artists: [ArtistModel]) -> String {
-        var string = ""
-        for artist in artists {
-            string.append(artist.name + ", ")
-        }
-        string.removeLast()
-        string.removeLast()
-        return string
     }
 }

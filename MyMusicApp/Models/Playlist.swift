@@ -42,7 +42,7 @@ struct PlaylistModel: Codable {
     let collaborative: Bool
     let description: String
 //    let external_urls: ExternalUrls
-//    let followers: Any?
+    let followers: TotalsModel?
     let href: String
     let id: String
     let images: [ImageModel]

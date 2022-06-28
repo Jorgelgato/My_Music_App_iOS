@@ -61,11 +61,9 @@ struct HomeViewController: View {
                 } else {
                     Text("Recomendations")
                         .font(.title.bold())
-                    ScrollView(.horizontal) {
-                        LazyHGrid(rows: threeColumnGrid) {
-                            ForEach (homeViewVM.recomendations, id: \.self) { track in
-                                Track(track)
-                            }
+                    LazyVStack {
+                        ForEach (homeViewVM.recomendations, id: \.self) { track in
+                            Track(track)
                         }
                     }
                     .padding(.horizontal, 10)
