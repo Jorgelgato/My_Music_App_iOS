@@ -17,7 +17,7 @@ struct PlaylistView: View {
     
     var body: some View {
         VStack {
-            TrackImage(playlist.images[0].url)
+            LoadImage(playlist.images[0].url)
                 .frame(width: 360, height: 360)
             VStack(alignment: .leading, spacing: 10) {
                 HStack {

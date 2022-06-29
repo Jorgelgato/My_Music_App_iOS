@@ -32,7 +32,7 @@ struct CateoryItem: View {
                 Spacer()
                 VStack {
                     Spacer()
-                    TrackImage(category.icons[0].url)
+                    LoadImage(category.icons[0].url)
                         .frame(width: 80, height: 80)
                         .rotationEffect(.degrees(25))
                         .offset(x: 20)

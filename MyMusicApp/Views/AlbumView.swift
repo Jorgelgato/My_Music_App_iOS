@@ -17,7 +17,7 @@ struct AlbumView: View {
     
     var body: some View {
         VStack {
-            TrackImage(album.images[0].url)
+            LoadImage(album.images[0].url)
                 .frame(width: 360, height: 360)
             if album.tracks?.items?.count ?? 0 > 0 {
                 ForEach(album.tracks!.items!, id: \.self)  { track in

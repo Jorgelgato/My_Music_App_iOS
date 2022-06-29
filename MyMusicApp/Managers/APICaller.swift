@@ -197,6 +197,28 @@ final class APICaller {
         }
     }
     
+    // MARK: Search
+    public func search(with query: String, completion: @escaping(Result<SearchResponse, Error>) -> Void) {
+        createRequest(with: "/search?type=artist,album,playlist,track&q=\(query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "")", type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+//                    print(String(decoding: data, as: UTF8.self))
+//                    let result = try JSONSerialization.jsonObject(with: data)
+                    let result = try JSONDecoder().decode(SearchResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
     enum HTTPMethod: String {
         case GET
         case POST

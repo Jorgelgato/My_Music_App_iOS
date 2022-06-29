@@ -7,15 +7,16 @@
 
 import Foundation
 import SwiftUI
+import CachedAsyncImage
 
 struct ProfileImage: View {
     var url: String
     
-    init(_ url: String){
+    init(_ url: String) {
         self.url = url
     }
     
-    var body: some View{
+    var body: some View {
         AsyncImage(url: URL(string: url)){ phase in
             if let image = phase.image {
                 image
@@ -34,15 +35,15 @@ struct ProfileImage: View {
     }
 }
 
-struct TrackImage: View {
+struct LoadImage: View {
     var url: String
     
-    init(_ url: String){
+    init(_ url: String) {
         self.url = url
     }
     
-    var body: some View{
-        AsyncImage(url: URL(string: url)){ phase in
+    var body: some View {
+        CachedAsyncImage(url: URL(string: url)) { phase in
             if let image = phase.image {
                 image
                     .resizable()

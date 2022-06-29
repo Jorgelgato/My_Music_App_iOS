@@ -17,7 +17,7 @@ struct ReleaseItem: View {
     
     var body: some View {
         HStack {
-            TrackImage(album.images[0].url)
+            LoadImage(album.images[0].url)
                 .frame(width: 120, height: 120)
             VStack(alignment: .leading, spacing: 8) {
                 Text(album.name)

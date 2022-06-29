@@ -9,24 +9,31 @@ import SwiftUI
 
 struct SearchViewController: View {
     @StateObject private var searchViewVM: SearchViewVM = SearchViewVM()
-    @State private var searchText = ""
     
     var body: some View {
         NavigationView {
             ScrollView {
-                LazyVGrid(columns: [GridItem(.fixed(200)), GridItem(.fixed(200))]) {
-                    ForEach(searchViewVM.categories, id: \.self) { category in
-                        NavigationLink(destination: CategoryViewController(id: category.id)) {
-                            CateoryItem(category)
+                if searchViewVM.queryText.isEmpty {
+                    LazyVGrid(columns: [GridItem(.fixed(200)), GridItem(.fixed(200))]) {
+                        ForEach(searchViewVM.categories, id: \.self) { category in
+                            NavigationLink(destination: CategoryViewController(id: category.id)) {
+                                CateoryItem(category)
+                            }
                         }
                     }
+                } else {
+                    SearchResultsViewController(search: searchViewVM.search)
                 }
             }
             .padding()
             .navigationBarTitle("Search")
-            .searchable(text: $searchText,
+            .searchable(text: $searchViewVM.searchText,
                         placement: .navigationBarDrawer(displayMode: .always),
                         prompt: "Artists, songs, or podcasts")
+            .onChange(of: searchViewVM.queryText) { _ in
+                searchViewVM.search(search: searchViewVM.queryText)
+            }
+            
         }
     }
 }

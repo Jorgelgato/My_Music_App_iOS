@@ -19,7 +19,7 @@ struct PlaylistItem: View {
     
     var body: some View {
         VStack(alignment: .leading ,spacing: 2) {
-            TrackImage(playlist.images.count > 0 ? playlist.images[0].url : "error")
+            LoadImage(playlist.images.count > 0 ? playlist.images[0].url : "error")
                 .frame(width: size.rawValue, height: size.rawValue)
             Text(playlist.name)
                 .bold()

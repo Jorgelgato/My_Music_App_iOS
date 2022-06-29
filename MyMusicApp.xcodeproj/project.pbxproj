@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7059834286CB2F600CCFAC2 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7059833286CB2F600CCFAC2 /* PlayerView.swift */; };
 		F7125B93286BAFB200D2203B /* CategoryViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7125B92286BAFB200D2203B /* CategoryViewVM.swift */; };
 		F76A12E7286B8F5700391DD4 /* SearchViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */; };
 		F76A12E9286BA15B00391DD4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E8286BA15B00391DD4 /* Category.swift */; };
@@ -50,9 +51,14 @@
 		F7C5A78B2864ABA90027761C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5A78A2864ABA90027761C /* Image.swift */; };
 		F7C5A78D2864ACA60027761C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5A78C2864ACA60027761C /* Album.swift */; };
 		F7C5A78F2864CFBE0027761C /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C5A78E2864CFBE0027761C /* Genre.swift */; };
+		F7CB5A66286C851500523E9D /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB5A65286C851500523E9D /* Search.swift */; };
+		F7CB5A68286C9FB200523E9D /* ArtistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB5A67286C9FB200523E9D /* ArtistView.swift */; };
+		F7CB5A6A286C9FE600523E9D /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CB5A69286C9FE600523E9D /* ResultsView.swift */; };
+		F7CB5A6D286CA2EF00523E9D /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = F7CB5A6C286CA2EF00523E9D /* CachedAsyncImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7059833286CB2F600CCFAC2 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		F7125B92286BAFB200D2203B /* CategoryViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewVM.swift; path = MyMusicApp/Controllers/Other/CategoryViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewVM.swift; path = MyMusicApp/Views/SearchViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E8286BA15B00391DD4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -98,6 +104,9 @@
 		F7C5A78A2864ABA90027761C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F7C5A78C2864ACA60027761C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		F7C5A78E2864CFBE0027761C /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		F7CB5A65286C851500523E9D /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		F7CB5A67286C9FB200523E9D /* ArtistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistView.swift; sourceTree = "<group>"; };
+		F7CB5A69286C9FE600523E9D /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7CB5A6D286CA2EF00523E9D /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				F76A12EA286BAB3F00391DD4 /* CategoryView.swift */,
+				F7CB5A69286C9FE600523E9D /* ResultsView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -190,6 +201,8 @@
 				F7B022882866189900340215 /* AlbumView.swift */,
 				F7B0228A2866452E00340215 /* TrackView.swift */,
 				F7B0228E28664BFF00340215 /* PlaylistView.swift */,
+				F7CB5A67286C9FB200523E9D /* ArtistView.swift */,
+				F7059833286CB2F600CCFAC2 /* PlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +220,7 @@
 				F7C5A78C2864ACA60027761C /* Album.swift */,
 				F7C5A78E2864CFBE0027761C /* Genre.swift */,
 				F76A12E8286BA15B00391DD4 /* Category.swift */,
+				F7CB5A65286C851500523E9D /* Search.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,6 +296,9 @@
 			dependencies = (
 			);
 			name = MyMusicApp;
+			packageProductDependencies = (
+				F7CB5A6C286CA2EF00523E9D /* CachedAsyncImage */,
+			);
 			productName = MyMusicApp;
 			productReference = F7B6B2262853C08300961852 /* MyMusicApp.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +327,9 @@
 				Base,
 			);
 			mainGroup = F7B6B21D2853C08300961852;
+			packageReferences = (
+				F7CB5A6B286CA2EF00523E9D /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
 			productRefGroup = F7B6B2272853C08300961852 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -340,6 +360,7 @@
 				F7C5A78F2864CFBE0027761C /* Genre.swift in Sources */,
 				F76A12E7286B8F5700391DD4 /* SearchViewVM.swift in Sources */,
 				F7B0227A2865EC8D00340215 /* NewReleasesView.swift in Sources */,
+				F7059834286CB2F600CCFAC2 /* PlayerView.swift in Sources */,
 				F7B6B2422853C1F200961852 /* SearchViewController.swift in Sources */,
 				F7B6B25C2853C2D200961852 /* Playlist.swift in Sources */,
 				F7B6B2562853C29F00961852 /* AuthManager.swift in Sources */,
@@ -360,6 +381,9 @@
 				F7B6B2482853C22200961852 /* AuthViewController.swift in Sources */,
 				F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */,
 				F7B0227C2865ECC400340215 /* FeaturedPlaylistsView.swift in Sources */,
+				F7CB5A68286C9FB200523E9D /* ArtistView.swift in Sources */,
+				F7CB5A66286C851500523E9D /* Search.swift in Sources */,
+				F7CB5A6A286C9FE600523E9D /* ResultsView.swift in Sources */,
 				F7B6B2442853C1FE00961852 /* LibraryViewController.swift in Sources */,
 				F7B6B2602853C2ED00961852 /* Artist.swift in Sources */,
 				F76A12EB286BAB3F00391DD4 /* CategoryView.swift in Sources */,
@@ -581,6 +605,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7CB5A6B286CA2EF00523E9D /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7CB5A6C286CA2EF00523E9D /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7CB5A6B286CA2EF00523E9D /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F7B6B21E2853C08300961852 /* Project object */;
 }
