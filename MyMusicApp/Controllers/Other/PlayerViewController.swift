@@ -9,7 +9,27 @@ import SwiftUI
 
 struct PlayerViewController: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            HStack {
+                Button {
+                    PlayerViewVM.shared.showing.toggle()
+                } label: {
+                    Image(systemName: "chevron.down")
+                }
+                Spacer()
+                Text("")
+                Spacer()
+                Button {
+                    
+                } label: {
+                    Image(systemName: "ellipsis")
+                        .rotationEffect(.degrees(90))
+                }
+            }
+            .padding(40)
+            Spacer()
+            PlayerView()
+        }
     }
 }
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F7059834286CB2F600CCFAC2 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7059833286CB2F600CCFAC2 /* PlayerView.swift */; };
+		F7059836286CBABC00CCFAC2 /* PlayerViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */; };
 		F7125B93286BAFB200D2203B /* CategoryViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7125B92286BAFB200D2203B /* CategoryViewVM.swift */; };
 		F76A12E7286B8F5700391DD4 /* SearchViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */; };
 		F76A12E9286BA15B00391DD4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E8286BA15B00391DD4 /* Category.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		F7059833286CB2F600CCFAC2 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewVM.swift; path = MyMusicApp/Views/PlayerViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F7125B92286BAFB200D2203B /* CategoryViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewVM.swift; path = MyMusicApp/Controllers/Other/CategoryViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewVM.swift; path = MyMusicApp/Views/SearchViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E8286BA15B00391DD4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 				F7B0228C28664BA100340215 /* PlaylistViewVM.swift */,
 				F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */,
 				F7125B92286BAFB200D2203B /* CategoryViewVM.swift */,
+				F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				F7B0228B2866452E00340215 /* TrackView.swift in Sources */,
 				F7B6B24E2853C25400961852 /* ProfileViewController.swift in Sources */,
 				F796F2E228620BE800B41AA9 /* AuthResponse.swift in Sources */,
+				F7059836286CBABC00CCFAC2 /* PlayerViewVM.swift in Sources */,
 				F7B6B22C2853C08300961852 /* TabBarView.swift in Sources */,
 				F7B6B2622853C2F400961852 /* User.swift in Sources */,
 				F7B6B25A2853C2BB00961852 /* HapticsManager.swift in Sources */,

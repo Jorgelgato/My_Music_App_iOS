@@ -9,11 +9,7 @@ import SwiftUI
 
 struct HomeViewController: View {
     @State private var settingsSheet = false
-    @State private var albumSheet = false
     @StateObject private var homeViewVM: HomeViewVM = HomeViewVM()
-    @State private var selectedAlbum: AlbumModel? = nil
-    private var threeColumnGrid = [GridItem(.fixed(130)), GridItem(.fixed(130)), GridItem(.fixed(130))]
-    private var twoColumnGrid = [GridItem(.fixed(270)), GridItem(.fixed(270))]
     
     var body: some View {
         NavigationView {
@@ -25,7 +21,7 @@ struct HomeViewController: View {
                     Text("New Releases")
                         .font(.title.bold())
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: threeColumnGrid) {
+                        LazyHGrid(rows: [GridItem(.fixed(130)), GridItem(.fixed(130)), GridItem(.fixed(130))]) {
                             ForEach (homeViewVM.albums, id: \.self) { album in
                                 NavigationLink(destination: AlbumViewController(id: album.id)) {
                                     ReleaseItem(album)
@@ -44,7 +40,7 @@ struct HomeViewController: View {
                     Text("Featured Playlists")
                         .font(.title.bold())
                     ScrollView(.horizontal) {
-                        LazyHGrid(rows: twoColumnGrid) {
+                        LazyHGrid(rows: [GridItem(.fixed(280)), GridItem(.fixed(280))]) {
                             ForEach (homeViewVM.playlists, id: \.self) { playlist in
                                 NavigationLink(destination: PlaylistViewController(id: playlist.id)) {
                                     PlaylistItem(playlist)
@@ -63,7 +59,12 @@ struct HomeViewController: View {
                         .font(.title.bold())
                     LazyVStack {
                         ForEach (homeViewVM.recomendations, id: \.self) { track in
-                            TrackItem(track)
+                            Button {
+                                PlayerViewVM.shared.startPlayback(id: track.id)
+                            } label: {
+                                TrackItem(track)
+                                    .foregroundColor(.primary)
+                            }
                         }
                     }
                     .padding(.horizontal, 10)

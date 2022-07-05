@@ -25,7 +25,7 @@ struct SearchViewController: View {
                     SearchResultsViewController(search: searchViewVM.search)
                 }
             }
-            .padding()
+            .padding(.horizontal, 10)
             .navigationBarTitle("Search")
             .searchable(text: $searchViewVM.searchText,
                         placement: .navigationBarDrawer(displayMode: .always),
@@ -33,7 +33,6 @@ struct SearchViewController: View {
             .onChange(of: searchViewVM.queryText) { _ in
                 searchViewVM.search(search: searchViewVM.queryText)
             }
-            
         }
     }
 }

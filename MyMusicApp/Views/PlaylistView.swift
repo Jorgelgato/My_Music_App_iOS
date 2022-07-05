@@ -54,7 +54,12 @@ struct PlaylistView: View {
             }
             if playlist.tracks.items.count > 0 {
                 ForEach(playlist.tracks.items, id: \.self) { item in
-                    TrackView(item.track)
+                    Button {
+                        PlayerViewVM.shared.startPlayback(id: item.track.id)
+                    } label: {
+                        TrackView(item.track)
+                            .foregroundColor(.primary)
+                    }
                 }
             }
             Spacer()

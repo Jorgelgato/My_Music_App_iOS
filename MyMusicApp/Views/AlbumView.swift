@@ -21,7 +21,12 @@ struct AlbumView: View {
                 .frame(width: 360, height: 360)
             if album.tracks?.items?.count ?? 0 > 0 {
                 ForEach(album.tracks!.items!, id: \.self)  { track in
-                    TrackView(track)
+                    Button {
+                        PlayerViewVM.shared.startPlayback(id: track.id)
+                    } label: {
+                        TrackView(track)
+                            .foregroundColor(.primary)
+                    }
                 }
             }
             Spacer()

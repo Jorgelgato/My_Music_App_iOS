@@ -32,3 +32,8 @@ func playlistDuration(items: [PlaylistItemModel]) -> String {
     let minutes = totalDuration/1000/60
     return "\(minutes/60)h \(minutes%60)min"
 }
+
+func trackDuration(duration: Int) -> String {
+    let minutes = duration/1000
+    return String(format: "%d:%02d", minutes/60, minutes%60)
+}

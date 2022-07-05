@@ -37,7 +37,7 @@ struct TrackModel: Codable, Hashable {
     let is_local: Bool
     let name: String
     let popularity: Int?
-//    let preview_url: Any?
+    let preview_url: String?
     let track_number: Int
     let type: String
     let uri: String

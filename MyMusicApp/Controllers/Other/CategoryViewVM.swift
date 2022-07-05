@@ -16,7 +16,6 @@ class CategoryViewVM: ObservableObject {
             switch result {
             case .success(let model):
                 DispatchQueue.main.async {
-                    print(model)
                     self.playlists = model.playlists.items
                 }
                 break

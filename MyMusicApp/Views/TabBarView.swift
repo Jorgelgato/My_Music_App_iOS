@@ -10,18 +10,29 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            HomeViewController()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-            SearchViewController()
-                .tabItem {
-                    Label("Search", systemImage: "magnifyingglass")
-                }
-            LibraryViewController()
-                .tabItem {
-                    Label("Library", systemImage: "music.note.list")
-                }
+            ZStack {
+                HomeViewController()
+                PlayerBar()
+            }
+            .tabItem {
+                Label("Home", systemImage: "house")
+            }
+            
+            ZStack {
+                SearchViewController()
+                PlayerBar()
+            }
+            .tabItem {
+                Label("Search", systemImage: "magnifyingglass")
+            }
+            
+            ZStack {
+                LibraryViewController()
+                PlayerBar()
+            }
+            .tabItem {
+                Label("Library", systemImage: "music.note.list")
+            }
         }
     }
 }

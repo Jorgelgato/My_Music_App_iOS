@@ -187,6 +187,7 @@ final class APICaller {
                 }
                 
                 do {
+                    print(String(decoding: data, as: UTF8.self))
                     let result = try JSONDecoder().decode(GeneralPlaylistsResponse.self, from: data)
                     completion(.success(result))
                 } catch {
@@ -207,9 +208,26 @@ final class APICaller {
                 }
                 
                 do {
-//                    print(String(decoding: data, as: UTF8.self))
-//                    let result = try JSONSerialization.jsonObject(with: data)
                     let result = try JSONDecoder().decode(SearchResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func getTrack(id: String, completion: @escaping(Result<TrackModel, Error>) -> Void) {
+        createRequest(with: "/tracks/\(id)", type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(TrackModel.self, from: data)
                     completion(.success(result))
                 } catch {
                     completion(.failure(error))

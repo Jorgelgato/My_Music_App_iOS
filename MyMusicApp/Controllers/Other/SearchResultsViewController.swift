@@ -47,11 +47,15 @@ struct SearchResultsViewController: View {
             
             if search?.tracks?.items?.count ?? 0 > 0 {
                 ForEach(search!.tracks!.items!, id: \.self) { track in
-                    SearchItem(.song,
-                               image: track.album?.images[0].url ?? "",
-                               title: track.name,
-                               owner: artistsString(artists: track.artists)
-                    )
+                    Button {
+                        PlayerViewVM.shared.startPlayback(id: track.id)
+                    } label: {
+                        SearchItem(.song,
+                                   image: track.album?.images[0].url ?? "",
+                                   title: track.name,
+                                   owner: artistsString(artists: track.artists)
+                        )
+                    }
                 }
             }
         }

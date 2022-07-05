@@ -10,6 +10,7 @@ import SwiftUI
 
 struct TrackView: View {
     var track: TrackModel
+      
     init (_ track: TrackModel) {
         self.track = track
     }
