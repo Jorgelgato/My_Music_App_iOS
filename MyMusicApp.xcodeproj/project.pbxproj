@@ -10,6 +10,7 @@
 		F7059834286CB2F600CCFAC2 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7059833286CB2F600CCFAC2 /* PlayerView.swift */; };
 		F7059836286CBABC00CCFAC2 /* PlayerViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */; };
 		F7125B93286BAFB200D2203B /* CategoryViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7125B92286BAFB200D2203B /* CategoryViewVM.swift */; };
+		F758FD882875B515000BC6B7 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758FD872875B515000BC6B7 /* UserViewModel.swift */; };
 		F76A12E7286B8F5700391DD4 /* SearchViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */; };
 		F76A12E9286BA15B00391DD4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E8286BA15B00391DD4 /* Category.swift */; };
 		F76A12EB286BAB3F00391DD4 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12EA286BAB3F00391DD4 /* CategoryView.swift */; };
@@ -62,6 +63,7 @@
 		F7059833286CB2F600CCFAC2 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewVM.swift; path = MyMusicApp/Views/PlayerViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F7125B92286BAFB200D2203B /* CategoryViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewVM.swift; path = MyMusicApp/Controllers/Other/CategoryViewVM.swift; sourceTree = SOURCE_ROOT; };
+		F758FD872875B515000BC6B7 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = MyMusicApp/Views/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewVM.swift; path = MyMusicApp/Views/SearchViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E8286BA15B00391DD4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F76A12EA286BAB3F00391DD4 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F758FD892875BC39000BC6B7 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
 		F76A12EC286BAB4900391DD4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +203,7 @@
 		F7B6B2382853C0A700961852 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F758FD892875BC39000BC6B7 /* Library */,
 				F76A12EC286BAB4900391DD4 /* Search */,
 				F7B022782865EC7100340215 /* Browse */,
 				F7B6B22B2853C08300961852 /* TabBarView.swift */,
@@ -236,6 +246,7 @@
 				F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */,
 				F7125B92286BAFB200D2203B /* CategoryViewVM.swift */,
 				F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */,
+				F758FD872875B515000BC6B7 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -393,6 +404,7 @@
 				F76A12EB286BAB3F00391DD4 /* CategoryView.swift in Sources */,
 				F7B6B2522853C26E00961852 /* PlaylistViewController.swift in Sources */,
 				F7125B93286BAFB200D2203B /* CategoryViewVM.swift in Sources */,
+				F758FD882875B515000BC6B7 /* UserViewModel.swift in Sources */,
 				F7B022892866189900340215 /* AlbumView.swift in Sources */,
 				F7B6B2402853C1E800961852 /* HomeViewController.swift in Sources */,
 				F7C5A78B2864ABA90027761C /* Image.swift in Sources */,

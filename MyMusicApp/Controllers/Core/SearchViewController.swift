@@ -17,7 +17,7 @@ struct SearchViewController: View {
                     LazyVGrid(columns: [GridItem(.fixed(200)), GridItem(.fixed(200))]) {
                         ForEach(searchViewVM.categories, id: \.self) { category in
                             NavigationLink(destination: CategoryViewController(id: category.id)) {
-                                CateoryItem(category)
+                                CategoryItem(category)
                             }
                         }
                     }

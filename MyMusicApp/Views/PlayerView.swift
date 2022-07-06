@@ -119,10 +119,17 @@ struct PlayerBar: View {
                 HStack {
                     LoadImage(playervm.track!.album!.images[0].url)
                         .frame(width: 40, height: 40)
-                    Text("\(playervm.track!.name) • \(artistsString(artists: playervm.track!.artists)) ")
+                    VStack(alignment: .leading) {
+                    Text(playervm.track!.name)
                         .font(.body.bold())
                         .foregroundColor(.primary)
                         .colorInvert()
+                        .lineLimit(1)
+                    Text(artistsString(artists: playervm.track!.artists))
+                        .foregroundColor(.primary)
+                        .colorInvert()
+                        .lineLimit(1)
+                    }
                     Spacer()
                     Button {
                         
@@ -146,7 +153,7 @@ struct PlayerBar: View {
                     .padding(.horizontal, 10)
                 }
                 .padding(10)
-                .background(Color("AccentColor").opacity(0.8))
+                .background(Color("AccentColor").opacity(0.9))
                 .clipped()
             }
         }

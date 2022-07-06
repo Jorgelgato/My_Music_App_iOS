@@ -13,9 +13,11 @@ struct SearchItem: View {
     let image: String
     let title: String
     let owner: String
+    let size: Size
     
-    init(_ type: ItemType, image: String, title: String, owner: String = "") {
+    init(_ type: ItemType, _ size: Size = .small, image: String, title: String, owner: String = "") {
         self.type = type
+        self.size = size
         self.image = image
         self.title = title
         self.owner = owner
@@ -26,7 +28,7 @@ struct SearchItem: View {
             switch type {
             case .artist:
                 LoadImage(image)
-                    .frame(width: 70, height: 70)
+                    .frame(width: size.rawValue, height: size.rawValue)
                     .clipShape(Circle())
                 Text(title)
                     .font(.title3.bold())
@@ -36,7 +38,7 @@ struct SearchItem: View {
                 
             case .album, .playlist, .song:
                 LoadImage(image)
-                    .frame(width: 70, height: 70)
+                    .frame(width: size.rawValue, height: size.rawValue)
                 VStack(alignment: .leading, spacing: 8) {
                     Text(title)
                         .lineLimit(1)
@@ -53,14 +55,7 @@ struct SearchItem: View {
             }
             Spacer()
         }
-        .frame(height: 70)
+        .frame(height: size.rawValue)
         .background(Color("AccentColor"))
     }
-}
-
-enum ItemType: String {
-    case artist = "Artist"
-    case album = "Album"
-    case playlist = "Playlist"
-    case song = "Song"
 }

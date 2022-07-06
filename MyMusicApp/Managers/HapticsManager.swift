@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 func artistsString(artists: [ArtistModel]) -> String {
     var string = ""
@@ -36,4 +37,18 @@ func playlistDuration(items: [PlaylistItemModel]) -> String {
 func trackDuration(duration: Int) -> String {
     let minutes = duration/1000
     return String(format: "%d:%02d", minutes/60, minutes%60)
+}
+
+enum Size: CGFloat {
+    case big = 240
+    case medium = 200
+    case small = 100
+    case tiny = 70
+}
+
+enum ItemType: String {
+    case artist = "Artist"
+    case album = "Album"
+    case playlist = "Playlist"
+    case song = "Song"
 }

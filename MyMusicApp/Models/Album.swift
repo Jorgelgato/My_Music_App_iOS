@@ -38,3 +38,18 @@ struct AlbumModel: Codable, Hashable {
     let uri: String
     let tracks: TrackResponse?
 }
+
+struct AlbumsResponse: Codable {
+    let href: String
+    let items: [AlbumItemModel]
+    let limit: Int
+    let next: String?
+    let offset: Int
+    let previous: String?
+    let total: Int
+}
+
+struct AlbumItemModel: Codable, Hashable {
+//    let added_at: Date
+    let album: AlbumModel
+}

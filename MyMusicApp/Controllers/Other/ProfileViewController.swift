@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct ProfileViewController: View {
-    @State private var user: UserModel? = nil
-    @State private var error: Bool = false
+    @StateObject private var userViewModel: UserViewModel = UserViewModel()
     
     var body: some View {
         ZStack {
-            if user == nil {
-                if error {
+            if userViewModel.user == nil {
+                if userViewModel.error {
                     Text("Algo salió mal :(")
                 } else {
                     ProgressView()
@@ -22,34 +21,22 @@ struct ProfileViewController: View {
                 }
             } else {
                 VStack(spacing: 20) {
-                    ProfileImage(self.user!.images?.count ?? 0 > 0 ? self.user!.images![0].url : "error")
+                    ProfileImage(userViewModel.user!.images?.count ?? 0 > 0 ? userViewModel.user!.images![0].url : "error")
                     
-                    Text(self.user!.display_name!)
+                    Text(userViewModel.user!.display_name!)
                         .font(.title.bold())
                     
-                    Text(self.user!.product!)
+                    Text(userViewModel.user!.product!)
                         .font(.title2)
                 }
             }
         }
         .navigationBarTitle("Profile")
         .onAppear {
-            loadUserData()
+            userViewModel.loadUserData()
         }
     }
     
-    func loadUserData (){
-        APICaller.shared.getCurrentUserProfile { result in
-            switch result {
-            case .success(let model):
-                self.user = model
-                break
-            case .failure(let error):
-                self.error = true
-                print(error.localizedDescription)
-            }
-        }
-    }
 }
 
 struct ProfileViewController_Previews: PreviewProvider {

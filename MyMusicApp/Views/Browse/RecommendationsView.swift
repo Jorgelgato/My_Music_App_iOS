@@ -24,10 +24,12 @@ struct TrackItem: View {
                     .font(.title3.bold())
                     .foregroundColor(.primary)
                     .colorInvert()
+                    .lineLimit(1)
                 Text(artistsString(artists: track.artists))
                     .font(.title3)
                     .foregroundColor(.primary)
                     .colorInvert()
+                    .lineLimit(1)
             }
             .padding(4)
             Spacer()

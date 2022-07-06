@@ -28,7 +28,3 @@ struct PlaylistItem: View {
     }
 }
 
-enum Size: CGFloat {
-    case big = 240
-    case medium = 200
-}

@@ -7,12 +7,16 @@
 
 import Foundation
 
+struct GeneralArtistsResponse: Codable {
+    let artists: ArtistResponse
+}
+
 struct ArtistResponse: Codable {
     let href: String
     let items: [ArtistModel]
     let limit: Int
     let next: String?
-    let offset: Int
+    let offset: Int?
     let previous: String?
     let total: Int
 }

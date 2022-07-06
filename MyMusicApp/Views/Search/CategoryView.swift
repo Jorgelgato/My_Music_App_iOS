@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct CateoryItem: View {
+struct CategoryItem: View {
     let category: CategoryModel
     
     init(_ category: CategoryModel) {

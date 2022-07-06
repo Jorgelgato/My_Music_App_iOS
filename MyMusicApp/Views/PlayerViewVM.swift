@@ -23,9 +23,6 @@ class PlayerViewVM: ObservableObject {
     
     @Published var error = false
     
-    func getTrack(_ id: String) {
-    }
-    
     func startPlayback(id: String) {
         APICaller.shared.getTrack(id: id) { result in
             switch result {
