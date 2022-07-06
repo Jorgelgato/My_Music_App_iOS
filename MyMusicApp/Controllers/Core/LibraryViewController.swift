@@ -33,12 +33,12 @@ struct LibraryViewController: View {
                         }
                     }
                     ForEach(userViewModel.artists, id: \.self) { artist in
-                        //NavigationLink(destination: ArtistViewController(id: artist.id)) {
+                        NavigationLink(destination: ArtistViewController(artist: artist)) {
                             SearchItem(.artist, .small,
                                        image: artist.images?.count ?? 0 > 0 ? artist.images![0].url : "error",
                                        title: artist.name
                             )
-                        //}
+                        }
                     }
                 }
             }

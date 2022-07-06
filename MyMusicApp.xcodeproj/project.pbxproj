@@ -11,6 +11,8 @@
 		F7059836286CBABC00CCFAC2 /* PlayerViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */; };
 		F7125B93286BAFB200D2203B /* CategoryViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7125B92286BAFB200D2203B /* CategoryViewVM.swift */; };
 		F758FD882875B515000BC6B7 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758FD872875B515000BC6B7 /* UserViewModel.swift */; };
+		F758FD8D2875E49C000BC6B7 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758FD8C2875E49C000BC6B7 /* ArtistViewController.swift */; };
+		F758FD8F2875E69D000BC6B7 /* ArtistViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F758FD8E2875E69D000BC6B7 /* ArtistViewVM.swift */; };
 		F76A12E7286B8F5700391DD4 /* SearchViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */; };
 		F76A12E9286BA15B00391DD4 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12E8286BA15B00391DD4 /* Category.swift */; };
 		F76A12EB286BAB3F00391DD4 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76A12EA286BAB3F00391DD4 /* CategoryView.swift */; };
@@ -64,6 +66,8 @@
 		F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlayerViewVM.swift; path = MyMusicApp/Views/PlayerViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F7125B92286BAFB200D2203B /* CategoryViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewVM.swift; path = MyMusicApp/Controllers/Other/CategoryViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F758FD872875B515000BC6B7 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserViewModel.swift; path = MyMusicApp/Views/UserViewModel.swift; sourceTree = SOURCE_ROOT; };
+		F758FD8C2875E49C000BC6B7 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
+		F758FD8E2875E69D000BC6B7 /* ArtistViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtistViewVM.swift; path = MyMusicApp/Controllers/Other/ArtistViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewVM.swift; path = MyMusicApp/Views/SearchViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F76A12E8286BA15B00391DD4 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F76A12EA286BAB3F00391DD4 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				F7125B92286BAFB200D2203B /* CategoryViewVM.swift */,
 				F7059835286CBABC00CCFAC2 /* PlayerViewVM.swift */,
 				F758FD872875B515000BC6B7 /* UserViewModel.swift */,
+				F758FD8E2875E69D000BC6B7 /* ArtistViewVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 				F7B6B2532853C28600961852 /* SearchResultsViewController.swift */,
 				F7B02284286603B700340215 /* AlbumViewController.swift */,
 				F76A12ED286BAC6100391DD4 /* CategoryViewController.swift */,
+				F758FD8C2875E49C000BC6B7 /* ArtistViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -377,6 +383,7 @@
 				F7059834286CB2F600CCFAC2 /* PlayerView.swift in Sources */,
 				F7B6B2422853C1F200961852 /* SearchViewController.swift in Sources */,
 				F7B6B25C2853C2D200961852 /* Playlist.swift in Sources */,
+				F758FD8D2875E49C000BC6B7 /* ArtistViewController.swift in Sources */,
 				F7B6B2562853C29F00961852 /* AuthManager.swift in Sources */,
 				F7B0228728660EE500340215 /* AlbumViewVM.swift in Sources */,
 				F7B6B2542853C28600961852 /* SearchResultsViewController.swift in Sources */,
@@ -404,6 +411,7 @@
 				F76A12EB286BAB3F00391DD4 /* CategoryView.swift in Sources */,
 				F7B6B2522853C26E00961852 /* PlaylistViewController.swift in Sources */,
 				F7125B93286BAFB200D2203B /* CategoryViewVM.swift in Sources */,
+				F758FD8F2875E69D000BC6B7 /* ArtistViewVM.swift in Sources */,
 				F758FD882875B515000BC6B7 /* UserViewModel.swift in Sources */,
 				F7B022892866189900340215 /* AlbumView.swift in Sources */,
 				F7B6B2402853C1E800961852 /* HomeViewController.swift in Sources */,

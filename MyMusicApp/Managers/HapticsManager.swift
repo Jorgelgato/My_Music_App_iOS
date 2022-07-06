@@ -40,6 +40,7 @@ func trackDuration(duration: Int) -> String {
 }
 
 enum Size: CGFloat {
+    case huge = 450
     case big = 240
     case medium = 200
     case small = 100

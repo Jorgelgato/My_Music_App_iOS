@@ -24,7 +24,7 @@ struct AlbumResponse: Codable {
 struct AlbumModel: Codable, Hashable {
     let album_type: String
     let artists: [ArtistModel]
-    let available_markets: [String]
+    let available_markets: [String]?
     //let external_urls: ExternalUrls
     let href: String
     let id: String
