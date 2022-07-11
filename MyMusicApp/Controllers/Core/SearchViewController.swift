@@ -12,12 +12,14 @@ struct SearchViewController: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
+            VStack {
                 if searchViewVM.queryText.isEmpty {
-                    LazyVGrid(columns: [GridItem(.fixed(200)), GridItem(.fixed(200))]) {
-                        ForEach(searchViewVM.categories, id: \.self) { category in
-                            NavigationLink(destination: CategoryViewController(id: category.id)) {
-                                CategoryItem(category)
+                    ScrollView {
+                        LazyVGrid(columns: [GridItem(.fixed(200)), GridItem(.fixed(200))]) {
+                            ForEach(searchViewVM.categories, id: \.self) { category in
+                                NavigationLink(destination: CategoryViewController(id: category.id)) {
+                                    CategoryItem(category)
+                                }
                             }
                         }
                     }

@@ -24,17 +24,21 @@ struct SearchItem: View {
     }
     
     var body: some View {
-        HStack {
-            switch type {
-            case .artist:
+        switch type {
+        case .artist:
+            HStack {
                 LoadImage(image)
                     .frame(width: size.rawValue, height: size.rawValue)
                     .clipShape(Circle())
                 Text(title)
                     .font(.title3.bold())
                     .padding(4)
-                
-            case .album, .playlist, .song:
+                Spacer()
+            }
+            .frame(height: size.rawValue)
+            
+        case .album, .playlist, .song:
+            HStack {
                 LoadImage(image)
                     .frame(width: size.rawValue, height: size.rawValue)
                 VStack(alignment: .leading, spacing: 8) {
@@ -46,10 +50,10 @@ struct SearchItem: View {
                         .font(.title3)
                 }
                 .padding(4)
+                Spacer()
             }
-            Spacer()
+            .frame(height: size.rawValue)
+            .background(Color("Background"))
         }
-        .frame(height: size.rawValue)
-        .background(Color("Background"))
     }
 }
