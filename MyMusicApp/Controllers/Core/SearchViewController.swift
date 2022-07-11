@@ -34,6 +34,7 @@ struct SearchViewController: View {
                 searchViewVM.search(search: searchViewVM.queryText)
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

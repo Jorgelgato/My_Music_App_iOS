@@ -25,7 +25,6 @@ struct ArtistViewController: View {
                                 PlayerViewVM.shared.startPlayback(id: track.id)
                             } label: {
                                 ArtistTrackView(track)
-                                    .foregroundColor(.primary)
                             }
                         }
                     }

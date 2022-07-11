@@ -8,28 +8,10 @@
 import SwiftUI
 
 struct PlayerViewController: View {
+    @StateObject var playervm = PlayerViewVM.shared
+    
     var body: some View {
-        VStack {
-            HStack {
-                Button {
-                    PlayerViewVM.shared.showing.toggle()
-                } label: {
-                    Image(systemName: "chevron.down")
-                }
-                Spacer()
-                Text("")
-                Spacer()
-                Button {
-                    
-                } label: {
-                    Image(systemName: "ellipsis")
-                        .rotationEffect(.degrees(90))
-                }
-            }
-            .padding(40)
-            Spacer()
-            PlayerView()
-        }
+        PlayerView()
     }
 }
 

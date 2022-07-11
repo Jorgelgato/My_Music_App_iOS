@@ -11,11 +11,12 @@ struct WelcomeView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Color.green.edgesIgnoringSafeArea(.all)
+                Color("Background").edgesIgnoringSafeArea(.all)
                 AuthViewController()
-                    .navigationBarTitle("My Music App")
+                    .navigationBarHidden(true)
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

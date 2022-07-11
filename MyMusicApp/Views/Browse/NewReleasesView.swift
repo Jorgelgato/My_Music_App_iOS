@@ -23,19 +23,15 @@ struct ReleaseItem: View {
                 Text(album.name)
                     .lineLimit(1)
                     .font(.title3.bold())
-                    .foregroundColor(.primary)
-                    .colorInvert()
                 Text(artistsString(artists: album.artists))
                     .lineLimit(1)
                     .font(.title3)
-                    .foregroundColor(.primary)
-                    .colorInvert()
             }
             .padding(4)
             Spacer()
         }
         .frame(width: 320, height: 120)
-        .background(Color("AccentColor"))
+        .background(Color("Background"))
         .padding(10)
     }
 }

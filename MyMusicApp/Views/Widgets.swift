@@ -24,7 +24,6 @@ struct ProfileImage: View {
             } else if phase.error != nil {
                 Image("profile")
                     .colorMultiply(.primary)
-                    .colorInvert()
             } else {
                 ProgressView()
             }
@@ -50,7 +49,6 @@ struct LoadImage: View {
             } else if phase.error != nil {
                 Image(systemName: "exclamationmark.triangle")
                     .colorMultiply(.primary)
-                    .colorInvert()
             } else {
                 ProgressView()
             }

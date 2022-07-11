@@ -10,11 +10,21 @@ import WebKit
 
 struct AuthViewController: View {
     @State private var showWebView = false
+    
     var body: some View {
         NavigationLink(isActive: self.$showWebView) {
             WebView(url: AuthManager.shared.signInURL!)
         } label: {
-            Text("Sign in with Spotify")
+            VStack(spacing: 24) {
+                Spacer()
+                Image("logo")
+                    .renderingMode(.template)
+                    .resizable()
+                    .frame(width: Size.medium.rawValue, height: Size.medium.rawValue)
+                Text("Sign in with Spotify")
+                    .font(.title.bold())
+                Spacer()
+            }
         }
     }
 }
@@ -26,18 +36,19 @@ struct AuthViewController_Previews: PreviewProvider {
 }
 
 struct WebView: UIViewRepresentable {
- 
+    
     @State var shouldDismiss = false
     var url: URL
- 
+    
     func makeUIView(context: Context) -> WKWebView {
         let prefs = WKWebpagePreferences()
         prefs.allowsContentJavaScript = true
         let config = WKWebViewConfiguration()
         config.defaultWebpagePreferences = prefs
         let webView = WKWebView(frame: .zero, configuration: config)
-        return webView    }
- 
+        return webView
+    }
+    
     func updateUIView(_ webView: WKWebView, context: Context) {
         guard !shouldDismiss || !context.environment.presentationMode.wrappedValue.isPresented else {
             context.environment.presentationMode.wrappedValue.dismiss()
@@ -57,7 +68,7 @@ struct WebView: UIViewRepresentable {
 class WebViewCoordinator: NSObject, WKNavigationDelegate {
     var parent: WebView
     init(_ parent: WebView) {
-         self.parent = parent
+        self.parent = parent
     }
     
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {

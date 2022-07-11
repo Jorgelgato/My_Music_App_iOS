@@ -22,19 +22,15 @@ struct TrackItem: View {
             VStack(alignment: .leading, spacing: 8) {
                 Text(track.name)
                     .font(.title3.bold())
-                    .foregroundColor(.primary)
-                    .colorInvert()
                     .lineLimit(1)
                 Text(artistsString(artists: track.artists))
                     .font(.title3)
-                    .foregroundColor(.primary)
-                    .colorInvert()
                     .lineLimit(1)
             }
             .padding(4)
             Spacer()
         }
         .frame(height: 100)
-        .background(Color("AccentColor"))
+        .background(Color("Background"))
     }
 }

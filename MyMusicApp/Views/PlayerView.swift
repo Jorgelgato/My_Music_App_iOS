@@ -20,6 +20,24 @@ struct PlayerView: View {
     var body: some View {
         VStack(spacing: 0) {
             if playervm.track != nil {
+                HStack {
+                    Button {
+                        playervm.showing.toggle()
+                    } label: {
+                        Image(systemName: "chevron.down")
+                    }
+                    Spacer()
+                    Text(playervm.track!.album!.name)
+                    Spacer()
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "ellipsis")
+                            .rotationEffect(.degrees(90))
+                    }
+                }
+                .padding(40)
+                
                 Spacer()
                 LoadImage(playervm.track!.album!.images.count > 0 ? playervm.track!.album!.images[0].url : "error")
                     .frame(width: 360, height: 360)
@@ -39,7 +57,6 @@ struct PlayerView: View {
                         Image(systemName: "heart")
                             .resizable()
                             .frame(width: 25, height: 25)
-                            .foregroundColor(Color("AccentColor"))
                     }
                 }
                 .padding()
@@ -61,7 +78,6 @@ struct PlayerView: View {
                         Image(systemName: "shuffle")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .foregroundColor(Color("AccentColor"))
                     }
                     Spacer()
                     
@@ -71,7 +87,6 @@ struct PlayerView: View {
                         Image(systemName: "backward.end.fill")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .foregroundColor(Color("AccentColor"))
                     }
                     Spacer()
                     Button {
@@ -80,7 +95,6 @@ struct PlayerView: View {
                         Image(systemName: playervm.playing ? "pause.circle.fill" : "play.circle.fill")
                             .resizable()
                             .frame(width: 50, height: 50)
-                            .foregroundStyle(.background, Color("AccentColor"))
                     }
                     Spacer()
                     Button {
@@ -89,7 +103,6 @@ struct PlayerView: View {
                         Image(systemName: "forward.end.fill")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .foregroundColor(Color("AccentColor"))
                     }
                     Spacer()
                     Button {
@@ -98,7 +111,6 @@ struct PlayerView: View {
                         Image(systemName: "arrow.rectanglepath")
                             .resizable()
                             .frame(width: 30, height: 30)
-                            .foregroundColor(Color("AccentColor"))
                     }
                 }
                 .padding()
@@ -122,12 +134,8 @@ struct PlayerBar: View {
                     VStack(alignment: .leading) {
                     Text(playervm.track!.name)
                         .font(.body.bold())
-                        .foregroundColor(.primary)
-                        .colorInvert()
                         .lineLimit(1)
                     Text(artistsString(artists: playervm.track!.artists))
-                        .foregroundColor(.primary)
-                        .colorInvert()
                         .lineLimit(1)
                     }
                     Spacer()
@@ -137,8 +145,6 @@ struct PlayerBar: View {
                         Image(systemName: "heart")
                             .resizable()
                             .frame(width: 20, height: 20)
-                            .foregroundColor(.primary)
-                            .colorInvert()
                     }
                     Button {
                         playervm.togglePlayback()
@@ -147,13 +153,11 @@ struct PlayerBar: View {
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
-                            .foregroundColor(.primary)
-                            .colorInvert()
                     }
                     .padding(.horizontal, 10)
                 }
                 .padding(10)
-                .background(Color("AccentColor").opacity(0.9))
+                .background(Color("Background").opacity(0.9))
                 .clipped()
             }
         }

@@ -32,8 +32,6 @@ struct SearchItem: View {
                     .clipShape(Circle())
                 Text(title)
                     .font(.title3.bold())
-                    .foregroundColor(.primary)
-                    .colorInvert()
                     .padding(4)
                 
             case .album, .playlist, .song:
@@ -43,19 +41,15 @@ struct SearchItem: View {
                     Text(title)
                         .lineLimit(1)
                         .font(.title3.bold())
-                        .foregroundColor(.primary)
-                        .colorInvert()
                     Text("\(type.rawValue) • \(owner)")
                         .lineLimit(1)
                         .font(.title3)
-                        .foregroundColor(.primary)
-                        .colorInvert()
                 }
                 .padding(4)
             }
             Spacer()
         }
         .frame(height: size.rawValue)
-        .background(Color("AccentColor"))
+        .background(Color("Background"))
     }
 }

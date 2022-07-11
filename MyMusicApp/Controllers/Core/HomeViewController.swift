@@ -15,11 +15,11 @@ struct HomeViewController: View {
         NavigationView {
             ScrollView {
                 //MARK: New releases
+                Text("New Releases")
+                    .font(.title.bold())
                 if (homeViewVM.albums.isEmpty) {
                     ProgressView()
                 } else {
-                    Text("New Releases")
-                        .font(.title.bold())
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem(.fixed(130)), GridItem(.fixed(130)), GridItem(.fixed(130))]) {
                             ForEach (homeViewVM.albums, id: \.self) { album in
@@ -34,11 +34,11 @@ struct HomeViewController: View {
                 
                 
                 //MARK: Playlists
+                Text("Featured Playlists")
+                    .font(.title.bold())
                 if (homeViewVM.playlists.isEmpty) {
                     ProgressView()
                 } else {
-                    Text("Featured Playlists")
-                        .font(.title.bold())
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: [GridItem(.fixed(280)), GridItem(.fixed(280))]) {
                             ForEach (homeViewVM.playlists, id: \.self) { playlist in
@@ -52,18 +52,17 @@ struct HomeViewController: View {
                 }
                 
                 //MARK: Recomendations
+                Text("Recomendations")
+                    .font(.title.bold())
                 if (homeViewVM.recomendations.isEmpty) {
                     ProgressView()
                 } else {
-                    Text("Recomendations")
-                        .font(.title.bold())
                     LazyVStack {
                         ForEach (homeViewVM.recomendations, id: \.self) { track in
                             Button {
                                 PlayerViewVM.shared.startPlayback(id: track.id)
                             } label: {
                                 TrackItem(track)
-                                    .foregroundColor(.primary)
                             }
                         }
                     }
@@ -83,6 +82,7 @@ struct HomeViewController: View {
                 }
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

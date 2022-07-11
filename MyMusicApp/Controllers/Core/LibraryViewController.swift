@@ -50,6 +50,7 @@ struct LibraryViewController: View {
                 userViewModel.loadUserFollowingArtists()
             }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

@@ -48,7 +48,7 @@ struct PlaylistView: View {
                     Image(systemName: "play.circle.fill")
                         .resizable()
                         .frame(width: 50, height: 50)
-                        .foregroundStyle(.white, Color("AccentColor"))
+                        .foregroundStyle(.white, Color("Background"))
                 }
                 .padding(.horizontal)
             }
@@ -58,7 +58,6 @@ struct PlaylistView: View {
                         PlayerViewVM.shared.startPlayback(id: item.track.id)
                     } label: {
                         TrackView(item.track)
-                            .foregroundColor(.primary)
                     }
                 }
             }

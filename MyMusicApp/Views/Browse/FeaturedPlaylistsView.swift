@@ -23,6 +23,7 @@ struct PlaylistItem: View {
                 .frame(width: size.rawValue, height: size.rawValue)
             Text(playlist.name)
                 .bold()
+                .lineLimit(1)
         }
         .padding(10)
     }

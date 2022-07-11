@@ -14,10 +14,12 @@ struct SearchResultsViewController: View {
         LazyVStack {
             if search?.artists?.items.count ?? 0 > 0 {
                 ForEach(search!.artists!.items, id: \.self) { artist in
-                    SearchItem(.artist,
-                               image: artist.images?.count ?? 0 > 0 ? artist.images![0].url : "error",
-                               title: artist.name
-                    )
+                    NavigationLink(destination: ArtistViewController(artist: artist)) {
+                        SearchItem(.artist,
+                                   image: artist.images?.count ?? 0 > 0 ? artist.images![0].url : "error",
+                                   title: artist.name
+                        )
+                    }
                 }
             }
             

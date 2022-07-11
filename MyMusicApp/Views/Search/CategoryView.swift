@@ -18,12 +18,10 @@ struct CategoryItem: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
-                .fill(Color("AccentColor"))
+                .fill(Color("Background"))
             HStack {
                 VStack {
                     Text(category.name)
-                        .foregroundColor(.primary)
-                        .colorInvert()
                         .font(.body.bold())
                         .padding()
                         .clipped()

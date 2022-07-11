@@ -28,7 +28,7 @@ class UserViewModel: ObservableObject {
                     break
                 case .failure(let error):
                     self.error = true
-                    print(error.localizedDescription)
+                    print(error)
                     break
                 }
             }
@@ -72,7 +72,6 @@ class UserViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    print(model)
                     self.artists = model.artists.items
                     break
                 case .failure(let error):

@@ -25,7 +25,6 @@ struct AlbumView: View {
                         PlayerViewVM.shared.startPlayback(id: track.id)
                     } label: {
                         TrackView(track)
-                            .foregroundColor(.primary)
                     }
                 }
             }
