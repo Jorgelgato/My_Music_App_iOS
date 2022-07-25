@@ -75,7 +75,7 @@ struct SearchResultsViewController: View {
                         if search?.tracks?.items?.count ?? 0 > 0 {
                             ForEach(search!.tracks!.items!, id: \.self) { track in
                                 Button {
-                                    PlayerViewVM.shared.startPlayback(id: track.id)
+                                    PlayerViewModel.shared.startPlayback(trackId: track.id)
                                 } label: {
                                     SearchItem(.song,
                                                image: track.album?.images[0].url ?? "",

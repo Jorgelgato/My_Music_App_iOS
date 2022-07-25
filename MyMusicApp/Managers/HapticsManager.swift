@@ -18,6 +18,16 @@ func artistsString(artists: [ArtistModel]) -> String {
     return string
 }
 
+func artistsString(artists: [PCMIObject]) -> String {
+    var string = ""
+    for artist in artists {
+        string.append(artist.name + ", ")
+    }
+    string.removeLast()
+    string.removeLast()
+    return string
+}
+
 func likesFormatter(likes: Int) -> String {
     let formatter = NumberFormatter()
     formatter.numberStyle = .decimal

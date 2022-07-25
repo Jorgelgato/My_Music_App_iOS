@@ -45,7 +45,7 @@ struct PlaylistModel: Codable {
     let followers: TotalsModel?
     let href: String
     let id: String
-    let images: [ImageModel]
+    let images: [ImageModel]?
     let name: String
     let owner: UserModel
     //let primary_color: String?

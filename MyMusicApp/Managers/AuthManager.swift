@@ -18,7 +18,19 @@ final class AuthManager {
         static let clientSecret = "e4833ef108084b89a177bbf3b4810844"
         static let tokenAPIURL = "https://accounts.spotify.com/api/token"
         static let redirectURI = "https://courses.iosacademy.io/"
-        static let scopes = "user-read-private%20playlist-read-private%20playlist-modify-private%20playlist-modify-public%20user-follow-modify%20user-library-modify%20user-library-read%20user-read-private%20user-follow-modify%20user-follow-read"
+        static let scopes = [
+            "streaming",
+            "user-read-email",
+            "user-read-private",
+            "user-library-read",
+            "user-library-modify",
+            "user-follow-read",
+            "user-follow-modify",
+            "user-modify-playback-state",
+            "playlist-read-private",
+            "playlist-modify-private",
+            "playlist-modify-public"
+        ]
     }
     
     private init() {
@@ -28,7 +40,7 @@ final class AuthManager {
     public var signInURL: URL? {
         let base = "https://accounts.spotify.com/authorize"
         //let redirectURI = "com.bobrek.mymusicapp://callback"
-        let string = "\(base)?response_type=code&client_id=\(Constants.clientID)&scope=\(Constants.scopes)&redirect_uri=\(Constants.redirectURI)&show_dialog=TRUE"
+        let string = "\(base)?response_type=code&client_id=\(Constants.clientID)&scope=\(Constants.scopes.joined(separator: "%20"))&redirect_uri=\(Constants.redirectURI)&show_dialog=TRUE"
         return URL(string: string)
     }
     
@@ -38,8 +50,12 @@ final class AuthManager {
         }
     }
     
-    private var accessToken: String? {
+    var accessToken: String? {
         return UserDefaults.standard.string(forKey: "access_token")
+    }
+    
+    var deviceID: String? {
+        return UserDefaults.standard.string(forKey: "device_id")
     }
     
     private var refreshToken: String? {

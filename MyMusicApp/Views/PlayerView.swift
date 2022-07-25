@@ -15,11 +15,11 @@ class ViewerOptions: ObservableObject {
 }
 
 struct PlayerView: View {
-    @StateObject var playervm = PlayerViewVM.shared
+    @StateObject var playervm = PlayerViewModel.shared
     
     var body: some View {
         VStack(spacing: 0) {
-            if playervm.track != nil {
+            if playervm.player != nil {
                 HStack {
                     Button {
                         playervm.showing.toggle()
@@ -27,7 +27,7 @@ struct PlayerView: View {
                         Image(systemName: "chevron.down")
                     }
                     Spacer()
-                    Text(playervm.track!.album!.name)
+                    Text(playervm.player!.context.metadata.current_item!.name)
                     Spacer()
                     Button {
                         
@@ -39,14 +39,14 @@ struct PlayerView: View {
                 .padding(40)
                 
                 Spacer()
-                LoadImage(playervm.track!.album!.images.count > 0 ? playervm.track!.album!.images[0].url : "error")
+                LoadImage(playervm.player!.context.metadata.current_item!.images.count > 0 ? playervm.player!.context.metadata.current_item!.images[0].url : "error")
                     .frame(width: 360, height: 360)
                 HStack {
                     VStack(alignment: .leading) {
-                        Text(playervm.track!.name)
+                        Text(playervm.player!.context.metadata.current_item!.name)
                             .lineLimit(1)
                             .font(.title.bold())
-                        Text(artistsString(artists: playervm.track!.artists))
+                        Text(artistsString(artists: playervm.player!.context.metadata.current_item!.artists))
                             .lineLimit(1)
                             .font(.title2)
                     }
@@ -67,7 +67,7 @@ struct PlayerView: View {
                     HStack {
                         Text("0:00")
                         Spacer()
-                        Text(trackDuration(duration: playervm.track!.duration_ms))
+                        Text(trackDuration(duration: playervm.player!.duration))
                     }
                 }
                 .padding()
@@ -90,9 +90,9 @@ struct PlayerView: View {
                     }
                     Spacer()
                     Button {
-                        playervm.togglePlayback()
+                        playervm.player!.paused ? playervm.startPlayback() : playervm.pausePlayback()
                     } label: {
-                        Image(systemName: playervm.playing ? "pause.circle.fill" : "play.circle.fill")
+                        Image(systemName: playervm.player!.paused ? "play.circle.fill" : "pause.circle.fill")
                             .resizable()
                             .frame(width: 50, height: 50)
                     }
@@ -122,20 +122,20 @@ struct PlayerView: View {
 }
 
 struct PlayerBar: View {
-    @StateObject var playervm = PlayerViewVM.shared
+    @StateObject var playervm = PlayerViewModel.shared
     
     var body: some View {
         VStack {
-            if playervm.player != nil && playervm.track != nil {
+            if playervm.player != nil {
                 Spacer()
                 HStack {
-                    LoadImage(playervm.track!.album!.images[0].url)
+                    LoadImage(playervm.player!.context.metadata.current_item!.images[0].url)
                         .frame(width: 40, height: 40)
                     VStack(alignment: .leading) {
-                    Text(playervm.track!.name)
+                    Text(playervm.player!.context.metadata.current_item!.name)
                         .font(.body.bold())
                         .lineLimit(1)
-                    Text(artistsString(artists: playervm.track!.artists))
+                    Text(artistsString(artists: playervm.player!.context.metadata.current_item!.artists))
                         .lineLimit(1)
                     }
                     Spacer()
@@ -147,9 +147,9 @@ struct PlayerBar: View {
                             .frame(width: 20, height: 20)
                     }
                     Button {
-                        playervm.togglePlayback()
+                        playervm.player!.paused ? playervm.startPlayback() : playervm.pausePlayback()
                     } label: {
-                        Image(systemName: playervm.playing ? "pause" : "play")
+                        Image(systemName: playervm.player!.paused ? "play" : "pause")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 20, height: 20)
@@ -166,9 +166,6 @@ struct PlayerBar: View {
         }
         .sheet(isPresented: $playervm.showing) {
             PlayerViewController()
-        }
-        .alert("Cannot play this song", isPresented: $playervm.error) {
-            Button("OK", role: .cancel) { }
         }
     }
 }

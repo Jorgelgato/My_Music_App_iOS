@@ -19,6 +19,8 @@ struct MyMusicApp: App {
         WindowGroup {
             if isSignedIn {
                 TabBarView()
+                JSPlayer()
+                    .frame(width: 0, height: 0)
             } else {
                 WelcomeView()
             }

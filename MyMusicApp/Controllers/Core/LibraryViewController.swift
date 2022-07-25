@@ -17,7 +17,7 @@ struct LibraryViewController: View {
                     ForEach(userViewModel.playlists, id: \.self) { playlist in
                         NavigationLink(destination: PlaylistViewController(id: playlist.id)) {
                             SearchItem(.playlist, .small,
-                                       image: playlist.images[0].url,
+                                       image: playlist.images.count > 0 ? playlist.images[0].url : "error",
                                        title: playlist.name,
                                        owner: playlist.owner.display_name ?? ""
                             )

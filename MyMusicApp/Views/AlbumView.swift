@@ -22,7 +22,7 @@ struct AlbumView: View {
             if album.tracks?.items?.count ?? 0 > 0 {
                 ForEach(album.tracks!.items!, id: \.self)  { track in
                     Button {
-                        PlayerViewVM.shared.startPlayback(id: track.id)
+                        PlayerViewModel.shared.startPlayback(trackId: track.id)
                     } label: {
                         TrackView(track)
                     }

@@ -313,10 +313,51 @@ final class APICaller {
             task.resume()
         }
     }
+
+    // MARK: Player
+    public func putStartPlayback(device: String, completion: @escaping(Result<Any, Error>) -> Void) {
+        createRequest(with: "/me/player/play?device_id=\(device)", type: .PUT) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                completion(.success(data))
+            }
+            task.resume()
+        }
+    }
+    
+    public func putPausePlayback(device: String, completion: @escaping(Result<Any, Error>) -> Void) {
+        createRequest(with: "/me/player/pause?device_id=\(device)", type: .PUT) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                completion(.success(data))
+            }
+            task.resume()
+        }
+    }
+    
+    public func putPlaySong(device: String, track: String, completion: @escaping(Result<Any, Error>) -> Void) {
+        createRequest(with: "/me/player/play?device_id=\(device)", type: .PUT, body: ["uris":["spotify:track:\(track)"]]) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                completion(.success(data))
+            }
+            task.resume()
+        }
+    }
     
     enum HTTPMethod: String {
         case GET
         case POST
+        case PUT
     }
     
     private func createRequest(
@@ -328,6 +369,22 @@ final class APICaller {
             var request = URLRequest(url: URL(string: Constants.baseAPIURL + url)!)
             request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
             request.httpMethod = type.rawValue
+            request.timeoutInterval = 30
+            completion(request)
+        }
+    }
+    
+    private func createRequest(
+        with url: String,
+        type: HTTPMethod,
+        body: [String: Any] = ["": ""],
+        completion: @escaping (URLRequest) -> Void
+    ) {
+        AuthManager.shared.withValidToken { token in
+            var request = URLRequest(url: URL(string: Constants.baseAPIURL + url)!)
+            request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            request.httpMethod = type.rawValue
+            request.httpBody = try? JSONSerialization.data(withJSONObject: body)
             request.timeoutInterval = 30
             completion(request)
         }

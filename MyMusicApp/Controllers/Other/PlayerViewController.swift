@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct PlayerViewController: View {
-    @StateObject var playervm = PlayerViewVM.shared
-    
     var body: some View {
         PlayerView()
     }

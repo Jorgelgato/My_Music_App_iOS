@@ -17,7 +17,7 @@ struct PlaylistView: View {
     
     var body: some View {
         VStack {
-            LoadImage(playlist.images[0].url)
+            LoadImage(playlist.images?.count ?? 0 > 0 ? playlist.images![0].url : "error")
                 .frame(width: 360, height: 360)
             VStack(alignment: .leading, spacing: 10) {
                 HStack {
@@ -55,7 +55,7 @@ struct PlaylistView: View {
             if playlist.tracks.items.count > 0 {
                 ForEach(playlist.tracks.items, id: \.self) { item in
                     Button {
-                        PlayerViewVM.shared.startPlayback(id: item.track.id)
+                        PlayerViewModel.shared.startPlayback(trackId: item.track.id)
                     } label: {
                         TrackView(item.track)
                     }
