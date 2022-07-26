@@ -315,6 +315,25 @@ final class APICaller {
     }
 
     // MARK: Player
+    public func getPlayer(completion: @escaping(Result<PlayerModel, Error>) -> Void) {
+        createRequest(with: "/me/player", type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                
+                do {
+                    let result = try JSONDecoder().decode(PlayerModel.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
     public func putStartPlayback(device: String, completion: @escaping(Result<Any, Error>) -> Void) {
         createRequest(with: "/me/player/play?device_id=\(device)", type: .PUT) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
@@ -354,10 +373,85 @@ final class APICaller {
         }
     }
     
+    public func postSkipNext(device: String, completion: @escaping(Result<Any, Error>) -> Void) {
+        createRequest(with: "/me/player/next?device_id=\(device)", type: .POST) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                completion(.success(data))
+            }
+            task.resume()
+        }
+    }
+    
+    public func postSkipPrevious(device: String, completion: @escaping(Result<Any, Error>) -> Void) {
+        createRequest(with: "/me/player/previous?device_id=\(device)", type: .POST) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                completion(.success(data))
+            }
+            task.resume()
+        }
+    }
+    
+    public func getSavedTracks(tracks: [String], completion: @escaping(Result<[Bool], Error>) -> Void) {
+        let ids = tracks.joined(separator: ",")
+        createRequest(with: "/me/tracks/contains?ids=\(ids)", type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode([Bool].self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func putSavedTracks(tracks: [String], completion: @escaping(Result<Any, Error>) -> Void) {
+        let ids = tracks.joined(separator: ",")
+        createRequest(with: "/me/tracks?ids=\(ids)", type: .PUT) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                completion(.success(data))
+            }
+            task.resume()
+        }
+    }
+    
+    public func deleteSavedTracks(tracks: [String], completion: @escaping(Result<Any, Error>) -> Void) {
+        let ids = tracks.joined(separator: ",")
+        createRequest(with: "/me/tracks?ids=\(ids)", type: .DELETE) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                completion(.success(data))
+            }
+            task.resume()
+        }
+    }
+    
+    
     enum HTTPMethod: String {
         case GET
         case POST
         case PUT
+        case DELETE
     }
     
     private func createRequest(

@@ -35,6 +35,7 @@ final class AuthManager {
     
     private init() {
         self.isSignedIn = UserDefaults.standard.object(forKey: "signed") as? Bool ?? false
+        UserDefaults.standard.removeObject(forKey: "device_id")
     }
     
     public var signInURL: URL? {

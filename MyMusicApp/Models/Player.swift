@@ -33,14 +33,14 @@ struct PCMetadata: Codable {
     let name: String?
     let uri: String?
     let url: String?
-    let current_item: PCMCurrentItem?
-    let previous_items: [String]?
-    let next_items: [String]?
-    let options: PCMOptions
-    let restrictions: PCMRestrictions
+    let current_item: PCMItem?
+    let previous_items: [PCMItem]?
+    let next_items: [PCMItem]?
+    let options: PCMOptions?
+    let restrictions: PCMRestrictions?
 }
 
-struct PCMCurrentItem: Codable {
+struct PCMItem: Codable {
     let name: String
     let uri: String
     let url: String
@@ -85,59 +85,61 @@ struct PCMRestrictions: Codable {
 }
 
 struct PTrackwindow: Codable {
-    let current_track: PTCurrenttrack
-    let next_tracks: [String?]
-    let previous_tracks: [String?]
+    let current_track: PTTrack?
+    let next_tracks: [PTTrack]?
+    let previous_tracks: [PTTrack]?
 }
 
-struct PTCurrenttrack: Codable {
+struct PTTrack: Codable {
     let id: String
     let uri: String
     let type: String
     let uid: String
-    let linked_from: PTCLinkedfrom
+    let linked_from: PTTLinkedfrom
     let media_type: String
     let track_type: String
     let name: String
     let duration_ms: Int
     let artists: [PCMIObject]
-    let album: PTCAlbum
+    let album: PTTAlbum
     let is_playable: Bool
 }
 
-struct PTCAlbum: Codable {
+struct PTTAlbum: Codable {
     let name: String
     let uri: String
     let images: [PCImages]
 }
 
-struct PTCLinkedfrom: Codable {
+struct PTTLinkedfrom: Codable {
     let uri: String?
     let id: String?
 }
 
 struct PRestrictions: Codable {
-    let disallow_seeking_reasons: [String?]
-    let disallow_skipping_next_reasons: [String?]
-    let disallow_skipping_prev_reasons: [String?]
-    let disallow_toggling_repeat_context_reasons: [String?]
-    let disallow_toggling_repeat_track_reasons: [String?]
-    let disallow_toggling_shuffle_reasons: [String?]
-    let disallow_peeking_next_reasons: [String?]
-    let disallow_peeking_prev_reasons: [String?]
+    let disallow_seeking_reasons: [String]?
+    let disallow_skipping_next_reasons: [String]?
+    let disallow_skipping_prev_reasons: [String]?
+    let disallow_toggling_repeat_context_reasons: [String]?
+    let disallow_toggling_repeat_track_reasons: [String]?
+    let disallow_toggling_shuffle_reasons: [String]?
+    let disallow_peeking_next_reasons: [String]?
+    let disallow_peeking_prev_reasons: [String]?
     let disallow_resuming_reasons: [String]?
+    let disallow_pausing_reasons: [String]?
 }
 
 struct PDisallows: Codable {
-    let seeking: Bool
-    let skipping_next: Bool
-    let skipping_prev: Bool
-    let toggling_repeat_context: Bool
-    let toggling_repeat_track: Bool
-    let toggling_shuffle: Bool
-    let peeking_next: Bool
-    let peeking_prev: Bool
+    let seeking: Bool?
+    let skipping_next: Bool?
+    let skipping_prev: Bool?
+    let toggling_repeat_context: Bool?
+    let toggling_repeat_track: Bool?
+    let toggling_shuffle: Bool?
+    let peeking_next: Bool?
+    let peeking_prev: Bool?
     let resuming: Bool?
+    let pausing: Bool?
 }
 
 struct PPlaybackfeatures: Codable {
