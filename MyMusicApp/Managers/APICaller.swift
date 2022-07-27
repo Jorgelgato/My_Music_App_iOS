@@ -460,6 +460,23 @@ final class APICaller {
         }
     }
     
+    public func putRepeatMode(state: RepeatMode, completion: @escaping(Result<Any, Error>) -> Void) {
+        createRequest(with: "/me/player/repeat?state=\(state.rawValue.lowercased())", type: .PUT) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                do {print(String(decoding: data, as: UTF8.self))
+                    let result = try JSONSerialization.jsonObject(with: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
     
     enum HTTPMethod: String {
         case GET

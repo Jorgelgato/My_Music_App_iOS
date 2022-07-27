@@ -16,9 +16,13 @@ class PlayerViewModel: ObservableObject {
     @Published var player: PlayerModel? = nil {
         didSet {
             if player != nil {
-                self.progress = self.player!.position
+                self.progress = self.player!.position / 1000
                 startProgress()
-                checkSavedTrack(trackId: player!.track_window.current_track!.id)
+                if player!.track_window.current_track != nil {
+                    checkSavedTrack(trackId: player!.track_window.current_track!.id)
+                } else {
+                    showing = false
+                }
             }
         }
     }
@@ -77,10 +81,10 @@ class PlayerViewModel: ObservableObject {
         timer?.invalidate()
         if !player!.paused {            
             timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
-                if self.progress + 1000 >= self.player!.duration || self.player!.paused {
+                if self.progress + 1 >= (self.player!.duration / 1000) || self.player!.paused {
                     timer.invalidate()
                 }
-                self.progress += 1000
+                self.progress += 1
             }
         }
     }
@@ -157,6 +161,21 @@ class PlayerViewModel: ObservableObject {
                 case .success(_):
                     break
                 case .failure(_):
+                    break
+                }
+            }
+        }
+    }
+    
+    func repeatMode(state: RepeatMode) {
+        APICaller.shared.putRepeatMode(state: state) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
+                    print(model)
+                    break
+                case .failure(let error):
+                    print(error)
                     break
                 }
             }

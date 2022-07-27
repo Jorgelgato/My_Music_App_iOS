@@ -68,7 +68,13 @@ struct PCImages: Codable {
 
 struct PCMOptions: Codable {
     let shuffled: Bool
-    let repeat_mode: String
+    let repeat_mode: RepeatMode
+}
+
+enum RepeatMode: String, Codable {
+    case OFF //0
+    case CONTEXT //1
+    case TRACK //2
 }
 
 struct PCMRestrictions: Codable {

@@ -18,9 +18,11 @@ struct MyMusicApp: App {
     var body: some Scene {
         WindowGroup {
             if isSignedIn {
-                TabBarView()
-                JSPlayer()
-                    .frame(width: 0, height: 0)
+                ZStack {
+                    JSPlayer()
+                        .frame(width: 0, height: 0)
+                    TabBarView()
+                }
             } else {
                 WelcomeView()
             }

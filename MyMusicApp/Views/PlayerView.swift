@@ -20,7 +20,7 @@ struct PlayerView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            if playervm.player != nil {
+            if playervm.player?.context.metadata.current_item != nil{
                 HStack {
                     Button {
                         playervm.showing.toggle()
@@ -75,9 +75,9 @@ struct PlayerView: View {
                 Spacer()
                 
                 VStack {
-                    ProgressView(value: Double(playervm.progress), total: Double(playervm.player!.duration))
+                    ProgressView(value: Double(playervm.progress), total: Double(playervm.player!.duration / 1000))
                     HStack {
-                        Text(trackDuration(duration: playervm.progress))
+                        Text(trackDuration(duration: playervm.progress * 1000))
                         Spacer()
                         Text(trackDuration(duration: playervm.player!.duration))
                     }
@@ -120,12 +120,15 @@ struct PlayerView: View {
                     }
                     Spacer()
                     
-                    Button {
-                        
-                    } label: {
-                        Image(systemName: "arrow.rectanglepath")
-                            .resizable()
-                            .frame(width: 30, height: 30)
+                    RepeatModeButton(mode: playervm.player!.context.metadata.options!.repeat_mode) {
+                        switch playervm.player!.context.metadata.options!.repeat_mode {
+                        case .CONTEXT:
+                            playervm.repeatMode(state: .TRACK)
+                        case .TRACK:
+                            playervm.repeatMode(state: .OFF)
+                        case .OFF:
+                            playervm.repeatMode(state: .CONTEXT)
+                        }
                     }
                 }
                 .padding()
@@ -134,8 +137,6 @@ struct PlayerView: View {
         }
         .padding()
     }
-    
-    
 }
 
 struct PlayerBar: View {
@@ -188,7 +189,7 @@ struct PlayerBar: View {
                         .padding(.horizontal, 10)
                     }
                     .padding(10)
-                    ProgressView(value: Double(playervm.progress), total: Double(playervm.player!.duration))
+                    ProgressView(value: Double(playervm.progress), total: Double(playervm.player!.duration / 1000))
                         .background(Color("Background"))
                 }
                 .background(Color("Background").opacity(0.9))
@@ -203,7 +204,6 @@ struct PlayerBar: View {
         }
     }
 }
-
 
 struct DisablingButton: View {
     var active: Bool
@@ -228,6 +228,40 @@ struct DisablingButton: View {
                     .frame(width: 30, height: 30)
             } else {
                 Image(systemName: image)
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(.secondary)
+            }
+        }
+    }
+}
+
+struct RepeatModeButton: View {
+    var mode: RepeatMode
+    var completion: () -> Void
+    
+    init (mode: RepeatMode, completion: @escaping () -> Void) {
+        self.mode = mode
+        self.completion = completion
+    }
+    
+    var body: some View {
+        Button {
+            completion()
+        } label: {
+            switch mode {
+            case .CONTEXT:
+                Image(systemName: "repeat")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(Color("Primary"))
+            case .TRACK:
+                Image(systemName: "repeat.1")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .foregroundColor(Color("Primary"))
+            case .OFF:
+                Image(systemName: "repeat")
                     .resizable()
                     .frame(width: 30, height: 30)
                     .foregroundColor(.secondary)
