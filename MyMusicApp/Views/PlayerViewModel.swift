@@ -149,4 +149,17 @@ class PlayerViewModel: ObservableObject {
             }
         }
     }
+    
+    func toggleShuffle(state: Bool) {
+        APICaller.shared.putToggleShuffle(state: state) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
+                    break
+                case .failure(_):
+                    break
+                }
+            }
+        }
+    }
 }

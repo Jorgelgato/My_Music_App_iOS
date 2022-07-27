@@ -447,6 +447,20 @@ final class APICaller {
     }
     
     
+    public func putToggleShuffle(state: Bool, completion: @escaping(Result<Any, Error>) -> Void) {
+        createRequest(with: "/me/player/shuffle?state=\(state)", type: .PUT) { request in
+            let task = URLSession.shared.dataTask(with: request) { data, _, error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failedToGetData))
+                    return
+                }
+                completion(.success(data))
+            }
+            task.resume()
+        }
+    }
+    
+    
     enum HTTPMethod: String {
         case GET
         case POST

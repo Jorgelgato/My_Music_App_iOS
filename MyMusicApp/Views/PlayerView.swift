@@ -84,26 +84,14 @@ struct PlayerView: View {
                 }
                 .padding()
                 HStack {
-                    if playervm.player!.shuffle {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "shuffle")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(Color("Primary"))
-                        }
-                    } else {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "shuffle")
-                                .resizable()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(.secondary)
-                        }
+                    Button {
+                        playervm.toggleShuffle(state: !playervm.player!.shuffle)
+                    } label: {
+                        Image(systemName: "shuffle")
+                            .resizable()
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(playervm.player!.shuffle ? Color("Primary") : .secondary)
                     }
-                    
                     
                     Spacer()
                     
