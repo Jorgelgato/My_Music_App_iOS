@@ -64,7 +64,7 @@ struct HomeViewController: View {
                         LazyVStack {
                             ForEach (homeViewVM.recomendations, id: \.self) { track in
                                 Button {
-                                    PlayerViewModel.shared.startPlayback(trackId: track.id)
+                                    PlayerViewModel.shared.startPlayback(trackUri: track.uri)
                                 } label: {
                                     TrackItem(track)
                                 }

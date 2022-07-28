@@ -115,8 +115,8 @@ class PlayerViewModel: ObservableObject {
         }
     }
 
-    func startPlayback(trackId: String) {
-        APICaller.shared.putPlaySong(device: AuthManager.shared.deviceID!, track: trackId) { result in
+    func startPlayback(trackUri: String) {
+        APICaller.shared.putPlayUris(device: AuthManager.shared.deviceID!, context: [trackUri]) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(_):

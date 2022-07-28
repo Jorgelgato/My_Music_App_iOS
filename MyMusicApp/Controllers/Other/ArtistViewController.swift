@@ -22,7 +22,7 @@ struct ArtistViewController: View {
                             .padding(.leading, 8)
                         ForEach(artistViewVM.tracks, id: \.self) { track in
                             Button {
-                                PlayerViewModel.shared.startPlayback(trackId: track.id)
+                                PlayerViewModel.shared.startPlayback(trackUri: track.uri)
                             } label: {
                                 ArtistTrackView(track)
                             }
