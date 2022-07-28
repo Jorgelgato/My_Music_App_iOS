@@ -25,4 +25,17 @@ class PlaylistViewVM: ObservableObject {
             }
         }
     }
+    
+    func startPlayback(playlistUri: String) {
+        APICaller.shared.putPlayContextUri(device: AuthManager.shared.deviceID!, context: playlistUri) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
+                    break
+                case .failure(_):
+                    break
+                }
+            }
+        }
+    }
 }

@@ -11,17 +11,46 @@ class AlbumViewVM: ObservableObject {
     
     @Published var album: AlbumModel? = nil
     
+    @Published var artist: ArtistModel? = nil
+    
     func getAlbum(id: String) {
         APICaller.shared.getAlbum(id: id) { result in
-            switch result {
-            case .success(let model):
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
                     self.album = model
+                    self.getArtist(id: self.album!.artists[0].id)
+                    break
+                case .failure(_):
+                    break
                 }
-                break
-            case .failure(let error):
-                print(error)
-                break
+            }
+        }
+    }
+    
+    func getArtist(id: String) {
+        APICaller.shared.getArtist(id: id) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let model):
+                    self.artist = model
+                    break
+                case .failure(_):
+                    break
+                }
+            }
+        }
+    }
+    
+    func startPlayback(albumUri: String) {
+        APICaller.shared.putPlayContextUri(device: AuthManager.shared.deviceID!, context: albumUri) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(_):
+                    break
+                case .failure(_):
+                    break
+                }
             }
         }
     }

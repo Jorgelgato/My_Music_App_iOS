@@ -118,7 +118,14 @@ final class APICaller {
             completion(result)
         }
     }
+    
 
+    public func getArtist(id: String, completion: @escaping(Result<ArtistModel, Error>) -> Void) {
+        createRequest(url: "/artists/\(id)", method: .GET, type: ArtistModel.self) { result in
+            completion(result)
+        }
+    }
+    
     // MARK: Player
     public func getPlayer(completion: @escaping(Result<PlayerModel, Error>) -> Void) {
         createRequest(url: "/me/player", method: .GET, type: PlayerModel.self) { result in

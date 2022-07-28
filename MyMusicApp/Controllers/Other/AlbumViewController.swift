@@ -14,8 +14,10 @@ struct AlbumViewController: View {
     var body: some View {
         ScrollView {
             VStack {
-                if (albumViewVM.album != nil) {
-                    AlbumView(albumViewVM.album!)
+                if (albumViewVM.album != nil && albumViewVM.artist != nil) {
+                    AlbumView(albumViewVM.album!, albumViewVM.artist!) { uri in
+                        albumViewVM.startPlayback(albumUri: uri)
+                    }
                 }
             }
         }
