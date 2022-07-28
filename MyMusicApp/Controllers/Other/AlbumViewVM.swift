@@ -42,8 +42,8 @@ class AlbumViewVM: ObservableObject {
         }
     }
     
-    func startPlayback(albumUri: String) {
-        APICaller.shared.putPlayContextUri(device: AuthManager.shared.deviceID!, context: albumUri) { result in
+    func startPlayback(albumUri: String, offset: Int) {
+        APICaller.shared.putPlayContextUri(device: AuthManager.shared.deviceID!, context: albumUri, offset: offset) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(_):

@@ -151,8 +151,8 @@ final class APICaller {
         }
     }
     
-    public func putPlayContextUri(device: String, context: String, completion: @escaping(Result<Data, Error>) -> Void) {
-        createRequest(url: "/me/player/play?device_id=\(device)", method: .PUT, body: ["context_uri":context]) { result in
+    public func putPlayContextUri(device: String, context: String, offset: Int, completion: @escaping(Result<Data, Error>) -> Void) {
+        createRequest(url: "/me/player/play?device_id=\(device)", method: .PUT, body: ["context_uri":context,"offset":["position":offset]]) { result in
             completion(result)
         }
     }
@@ -218,7 +218,6 @@ final class APICaller {
                 }
                 
                 do {
-                    print(String(decoding: data, as: UTF8.self))
                     let result = try JSONDecoder().decode(type.self, from: data)
                     completion(.success(result))
                 } catch {
@@ -230,14 +229,12 @@ final class APICaller {
     }
     
     private func createRequest(url: String, method: HTTPMethod, body: [String: Any] = [:], completion: @escaping (Result<Data, Error>) -> Void) {
-        print(body)
         sendRequest(with: url, type: method, body: body) { request in
             let task = URLSession.shared.dataTask(with: request) { data, _, error in
                 guard let data = data, error == nil else {
                     completion(.failure(APIError.failedToGetData))
                     return
                 }
-                print(String(decoding: data, as: UTF8.self))
                 completion(.success(data))
             }
             task.resume()

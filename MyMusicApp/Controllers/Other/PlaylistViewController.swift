@@ -15,8 +15,8 @@ struct PlaylistViewController: View {
         ScrollView {
             VStack {
                 if (playlistViewVM.playlist != nil) {
-                    PlaylistView(playlistViewVM.playlist!) { uri in
-                        playlistViewVM.startPlayback(playlistUri: uri)
+                    PlaylistView(playlistViewVM.playlist!) { uri, offset in
+                        playlistViewVM.startPlayback(playlistUri: uri, offset: offset)
                     }
                 }
             }

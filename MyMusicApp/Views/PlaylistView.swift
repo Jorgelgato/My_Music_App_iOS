@@ -10,9 +10,9 @@ import SwiftUI
 
 struct PlaylistView: View {
     let playlist: PlaylistModel
-    var play: (_ uri: String) -> Void
+    var play: (_ uri: String, _ offset: Int) -> Void
     
-    init(_ palylist: PlaylistModel, play: @escaping (_ uri: String) -> Void) {
+    init(_ palylist: PlaylistModel, play: @escaping (_ uri: String,_ offset: Int) -> Void) {
         self.playlist = palylist
         self.play = play
     }
@@ -44,7 +44,7 @@ struct PlaylistView: View {
                         .rotationEffect(Angle(degrees: 90))
                     Spacer()
                     Button {
-                        play(playlist.uri)
+                        play(playlist.uri, 0)
                     } label: {
                         Image(systemName: "play.circle.fill")
                             .resizable()
@@ -55,9 +55,9 @@ struct PlaylistView: View {
                 .padding(.horizontal)
             }
             if playlist.tracks.items.count > 0 {
-                ForEach(playlist.tracks.items, id: \.self) { item in
+                ForEach(Array(playlist.tracks.items.enumerated()), id: \.element) { index, item in
                     Button {
-                        PlayerViewModel.shared.startPlayback(trackUri: item.track.uri)
+                        play(playlist.uri, index)
                     } label: {
                         TrackView(item.track)
                     }

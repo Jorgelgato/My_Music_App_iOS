@@ -15,8 +15,8 @@ struct AlbumViewController: View {
         ScrollView {
             VStack {
                 if (albumViewVM.album != nil && albumViewVM.artist != nil) {
-                    AlbumView(albumViewVM.album!, albumViewVM.artist!) { uri in
-                        albumViewVM.startPlayback(albumUri: uri)
+                    AlbumView(albumViewVM.album!, albumViewVM.artist!) { uri, offset in
+                        albumViewVM.startPlayback(albumUri: uri, offset: offset)
                     }
                 }
             }

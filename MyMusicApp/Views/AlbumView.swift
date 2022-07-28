@@ -11,9 +11,9 @@ import SwiftUI
 struct AlbumView: View {
     let album: AlbumModel
     let artist: ArtistModel
-    let play: (_ uri: String) -> Void
+    var play: (_ uri: String, _ offset: Int) -> Void
     
-    init(_ album: AlbumModel,_ artist: ArtistModel, play: @escaping (_ uri: String) -> Void) {
+    init(_ album: AlbumModel,_ artist: ArtistModel, play: @escaping (_ uri: String,_ offset: Int) -> Void) {
         self.album = album
         self.artist = artist
         self.play = play
@@ -53,7 +53,7 @@ struct AlbumView: View {
                         .rotationEffect(Angle(degrees: 90))
                     Spacer()
                     Button {
-                        play(album.uri)
+                        play(album.uri, 0)
                     } label: {
                         Image(systemName: "play.circle.fill")
                             .resizable()
@@ -64,9 +64,9 @@ struct AlbumView: View {
                 .padding(.horizontal)
             }
             if album.tracks?.items?.count ?? 0 > 0 {
-                ForEach(album.tracks!.items!, id: \.self)  { track in
+                ForEach(Array(album.tracks!.items!.enumerated()), id: \.element) { index, track in
                     Button {
-                        PlayerViewModel.shared.startPlayback(trackUri: track.uri)
+                        play(album.uri, index)
                     } label: {
                         TrackView(track)
                     }
