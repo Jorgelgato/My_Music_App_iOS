@@ -9,21 +9,23 @@ import SwiftUI
 
 struct PlaylistViewController: View {
     var id: String
-    @StateObject private var playlistViewVM: PlaylistViewVM = PlaylistViewVM()
+    @StateObject private var playlistVM: PlaylistViewModel = PlaylistViewModel()
     
     var body: some View {
         ScrollView {
             VStack {
-                if (playlistViewVM.playlist != nil) {
-                    PlaylistView(playlistViewVM.playlist!) { uri, offset in
-                        playlistViewVM.startPlayback(playlistUri: uri, offset: offset)
+                if (playlistVM.playlist != nil && (playlistVM.playlist!.tracks.items.count == playlistVM.favorites.count)) {
+                    PlaylistView(playlistVM.playlist!, playlistVM.favorites) { uri, offset in
+                        playlistVM.startPlayback(playlistUri: uri, offset: offset)
                     }
+                } else {
+                    ProgressView()
                 }
             }
         }
-        .navigationTitle(playlistViewVM.playlist?.name ?? "")
+        .navigationTitle(playlistVM.playlist?.name ?? "")
         .onAppear {
-            playlistViewVM.getPlaylist(id: id)
+            playlistVM.getPlaylist(id: id)
         }
     }
 }

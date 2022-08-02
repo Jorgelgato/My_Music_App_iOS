@@ -9,21 +9,21 @@ import SwiftUI
 
 struct AlbumViewController: View {
     var id: String
-    @StateObject private var albumViewVM: AlbumViewVM = AlbumViewVM()
+    @StateObject private var albumVM: AlbumViewModel = AlbumViewModel()
     
     var body: some View {
         ScrollView {
             VStack {
-                if (albumViewVM.album != nil && albumViewVM.artist != nil) {
-                    AlbumView(albumViewVM.album!, albumViewVM.artist!) { uri, offset in
-                        albumViewVM.startPlayback(albumUri: uri, offset: offset)
+                if (albumVM.album != nil && albumVM.artist != nil && (albumVM.album!.tracks!.items!.count == albumVM.favorites.count)) {
+                    AlbumView(albumVM.album!, albumVM.artist!, albumVM.favorites) { uri, offset in
+                        albumVM.startPlayback(albumUri: uri, offset: offset)
                     }
                 }
             }
         }
-        .navigationTitle(albumViewVM.album?.name ?? "")
+        .navigationTitle(albumVM.album?.name ?? "")
         .onAppear {
-            albumViewVM.getAlbum(id: id)
+            albumVM.getAlbum(id: id)
         }
     }
 }

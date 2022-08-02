@@ -11,11 +11,13 @@ import SwiftUI
 struct AlbumView: View {
     let album: AlbumModel
     let artist: ArtistModel
+    @State var favorites: [Bool]
     var play: (_ uri: String, _ offset: Int) -> Void
     
-    init(_ album: AlbumModel,_ artist: ArtistModel, play: @escaping (_ uri: String,_ offset: Int) -> Void) {
+    init(_ album: AlbumModel,_ artist: ArtistModel,_ favorites: [Bool], play: @escaping (_ uri: String,_ offset: Int) -> Void) {
         self.album = album
         self.artist = artist
+        self.favorites = favorites
         self.play = play
     }
     
@@ -68,7 +70,10 @@ struct AlbumView: View {
                     Button {
                         play(album.uri, index)
                     } label: {
-                        TrackView(track)
+                        TrackView(track, favorites[index]) {
+                            PlayerViewModel.shared.removeTrack(trackId: track.id)
+                            self.favorites[index] = false
+                        }
                     }
                 }
             }

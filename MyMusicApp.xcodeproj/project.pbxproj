@@ -28,10 +28,10 @@
 		F7B0227E2865ECF500340215 /* RecommendationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0227D2865ECF500340215 /* RecommendationsView.swift */; };
 		F7B022822865F4B800340215 /* HomeViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B022812865F4B800340215 /* HomeViewVM.swift */; };
 		F7B02285286603B700340215 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B02284286603B700340215 /* AlbumViewController.swift */; };
-		F7B0228728660EE500340215 /* AlbumViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228628660EE500340215 /* AlbumViewVM.swift */; };
+		F7B0228728660EE500340215 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228628660EE500340215 /* AlbumViewModel.swift */; };
 		F7B022892866189900340215 /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B022882866189900340215 /* AlbumView.swift */; };
 		F7B0228B2866452E00340215 /* TrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228A2866452E00340215 /* TrackView.swift */; };
-		F7B0228D28664BA100340215 /* PlaylistViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228C28664BA100340215 /* PlaylistViewVM.swift */; };
+		F7B0228D28664BA100340215 /* PlaylistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228C28664BA100340215 /* PlaylistViewModel.swift */; };
 		F7B0228F28664BFF00340215 /* PlaylistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B0228E28664BFF00340215 /* PlaylistView.swift */; };
 		F7B4817C2863AC1400B431AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7B4817B2863AC1400B431AB /* LaunchScreen.storyboard */; };
 		F7B6B22A2853C08300961852 /* MyMusicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B6B2292853C08300961852 /* MyMusicApp.swift */; };
@@ -88,10 +88,10 @@
 		F7B0227D2865ECF500340215 /* RecommendationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsView.swift; sourceTree = "<group>"; };
 		F7B022812865F4B800340215 /* HomeViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewVM.swift; path = MyMusicApp/Models/HomeViewVM.swift; sourceTree = SOURCE_ROOT; };
 		F7B02284286603B700340215 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
-		F7B0228628660EE500340215 /* AlbumViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumViewVM.swift; path = MyMusicApp/Controllers/Other/AlbumViewVM.swift; sourceTree = SOURCE_ROOT; };
+		F7B0228628660EE500340215 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AlbumViewModel.swift; path = MyMusicApp/Controllers/Other/AlbumViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F7B022882866189900340215 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		F7B0228A2866452E00340215 /* TrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackView.swift; sourceTree = "<group>"; };
-		F7B0228C28664BA100340215 /* PlaylistViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistViewVM.swift; path = MyMusicApp/Views/PlaylistViewVM.swift; sourceTree = SOURCE_ROOT; };
+		F7B0228C28664BA100340215 /* PlaylistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlaylistViewModel.swift; path = MyMusicApp/Views/PlaylistViewModel.swift; sourceTree = SOURCE_ROOT; };
 		F7B0228E28664BFF00340215 /* PlaylistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistView.swift; sourceTree = "<group>"; };
 		F7B4817B2863AC1400B431AB /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7B6B2262853C08300961852 /* MyMusicApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMusicApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,8 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				F7B022812865F4B800340215 /* HomeViewVM.swift */,
-				F7B0228628660EE500340215 /* AlbumViewVM.swift */,
-				F7B0228C28664BA100340215 /* PlaylistViewVM.swift */,
+				F7B0228628660EE500340215 /* AlbumViewModel.swift */,
+				F7B0228C28664BA100340215 /* PlaylistViewModel.swift */,
 				F76A12E6286B8F5700391DD4 /* SearchViewVM.swift */,
 				F7125B92286BAFB200D2203B /* CategoryViewVM.swift */,
 				F758FD872875B515000BC6B7 /* UserViewModel.swift */,
@@ -400,9 +400,9 @@
 				F7B6B25C2853C2D200961852 /* Playlist.swift in Sources */,
 				F758FD8D2875E49C000BC6B7 /* ArtistViewController.swift in Sources */,
 				F7B6B2562853C29F00961852 /* AuthManager.swift in Sources */,
-				F7B0228728660EE500340215 /* AlbumViewVM.swift in Sources */,
+				F7B0228728660EE500340215 /* AlbumViewModel.swift in Sources */,
 				F7B6B2542853C28600961852 /* SearchResultsViewController.swift in Sources */,
-				F7B0228D28664BA100340215 /* PlaylistViewVM.swift in Sources */,
+				F7B0228D28664BA100340215 /* PlaylistViewModel.swift in Sources */,
 				F7B02285286603B700340215 /* AlbumViewController.swift in Sources */,
 				F76A12EE286BAC6100391DD4 /* CategoryViewController.swift in Sources */,
 				F7B6B24A2853C22F00961852 /* WelcomeView.swift in Sources */,

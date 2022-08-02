@@ -10,10 +10,12 @@ import SwiftUI
 
 struct PlaylistView: View {
     let playlist: PlaylistModel
+    @State var favorites: [Bool]
     var play: (_ uri: String, _ offset: Int) -> Void
     
-    init(_ palylist: PlaylistModel, play: @escaping (_ uri: String,_ offset: Int) -> Void) {
+    init(_ palylist: PlaylistModel,_ favorites: [Bool], play: @escaping (_ uri: String,_ offset: Int) -> Void) {
         self.playlist = palylist
+        self.favorites = favorites
         self.play = play
     }
     
@@ -59,7 +61,10 @@ struct PlaylistView: View {
                     Button {
                         play(playlist.uri, index)
                     } label: {
-                        TrackView(item.track)
+                        TrackView(item.track, favorites[index]) {
+                            PlayerViewModel.shared.removeTrack(trackId: item.track.id)
+                            self.favorites[index] = false
+                        }
                     }
                 }
             }

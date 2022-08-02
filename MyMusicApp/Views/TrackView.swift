@@ -9,10 +9,14 @@ import Foundation
 import SwiftUI
 
 struct TrackView: View {
-    var track: TrackModel
+    let track: TrackModel
+    let isFavorite: Bool
+    let remove: () -> Void
       
-    init (_ track: TrackModel) {
+    init (_ track: TrackModel,_ isFavorite: Bool, remove: @escaping () -> Void) {
         self.track = track
+        self.isFavorite = isFavorite
+        self.remove = remove
     }
     var body: some View {
         HStack(spacing: 24) {
@@ -28,7 +32,14 @@ struct TrackView: View {
                 }
             }
             Spacer()
-            Image(systemName: "heart")
+            if isFavorite {
+                Button {
+                    remove()
+                } label: {
+                    Image(systemName: "heart.fill")
+                        .foregroundColor(Color("Primary"))
+                }
+            }
             Image(systemName: "ellipsis")
                 .rotationEffect(.degrees(90))
         }
